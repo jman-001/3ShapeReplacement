@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="icon" type="image/png" href="3shape_logo.png">
     <meta charset="UTF-8">
-    <title> Replacement Form</title>
+    <title>Replacement Form</title>
+    <link rel="icon" type="image/png" href="3shape_logo.png">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -167,12 +167,16 @@
     <div class="section-title">Damage Type</div>
 
     <label>Type of Damage:</label>
-    <select id="damageSelect" onchange="toggleDamageFields()">
+    <select id="damageSelect" onchange="toggleDamageFields(); validateDamageType();">
         <option value="">-- Select Damage Type --</option>
         <option value="internal">Internal Damage</option>
         <option value="physical">Physical Damage</option>
         <option value="tips">Broken Tips</option>
     </select>
+
+    <small id="damageError" style="color:#C8102E; display:none;">
+        Please select a damage type.
+    </small>
 
     <!-- Physical Damage Section -->
     <div id="physicalSection" class="hidden" style="margin-top:20px;">
@@ -254,6 +258,9 @@ function toggleDamageFields() {
 // LIVE VALIDATION
 document.getElementById("phone").addEventListener("input", validateContactFields);
 document.getElementById("email").addEventListener("input", validateContactFields);
+document.querySelectorAll("input[required]").forEach(el => {
+    el.addEventListener("input", validateRequiredFields);
+});
 
 function validateContactFields() {
     let valid = true;
@@ -287,6 +294,52 @@ function validateContactFields() {
     }
 
     return valid;
+}
+
+// REQUIRED FIELD VALIDATION
+function validateRequiredFields() {
+    let valid = true;
+
+    document.querySelectorAll("input[required]").forEach(el => {
+        const errorId = el.id + "ReqError";
+        let errorEl = document.getElementById(errorId);
+
+        if (!errorEl) {
+            errorEl = document.createElement("small");
+            errorEl.id = errorId;
+            errorEl.style.color = "#C8102E";
+            errorEl.style.display = "none";
+            errorEl.textContent = "This field is required.";
+            el.insertAdjacentElement("afterend", errorEl);
+        }
+
+        if (el.value.trim() === "") {
+            el.classList.add("error");
+            errorEl.style.display = "block";
+            valid = false;
+        } else {
+            el.classList.remove("error");
+            errorEl.style.display = "none";
+        }
+    });
+
+    return valid;
+}
+
+// DAMAGE TYPE VALIDATION
+function validateDamageType() {
+    const damage = document.getElementById("damageSelect");
+    const damageError = document.getElementById("damageError");
+
+    if (damage.value === "") {
+        damage.classList.add("error");
+        damageError.style.display = "block";
+        return false;
+    } else {
+        damage.classList.remove("error");
+        damageError.style.display = "none";
+        return true;
+    }
 }
 
 // Auto-save
@@ -377,7 +430,7 @@ Boiler water chemicals: ${document.getElementById("tip_boiler_chemicals").value}
 
 // Export as TXT
 function exportTXT() {
-    if (!validateContactFields()) {
+    if (!validateRequiredFields() || !validateDamageType() || !validateContactFields()) {
         alert("Please correct the highlighted fields.");
         return;
     }
@@ -393,7 +446,7 @@ function exportTXT() {
 
 // Copy to Clipboard
 function copyToClipboard() {
-    if (!validateContactFields()) {
+    if (!validateRequiredFields() || !validateDamageType() || !validateContactFields()) {
         alert("Please correct the highlighted fields.");
         return;
     }
