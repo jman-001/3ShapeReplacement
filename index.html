@@ -3,7 +3,10 @@
 <head>
     <link rel="icon" type="image/png" href="3shape_logo.png">
     <meta charset="UTF-8">
-    <title>3Shape Replacement Form</title>
+    <title>Replacement Form</title>
+
+    <link rel="icon" type="image/png" href="favicon.png">
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,30 +23,36 @@
             font-size: 26px;
             font-weight: bold;
             letter-spacing: 1px;
-            position: relative;
-        }
-
-        .logo {
-            width: 160px;
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
         }
 
         .container {
             background: white;
-            max-width: 700px;
+            max-width: 900px;
             margin: 30px auto;
-            padding: 25px 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            border-left: 6px solid #C8102E;
+        }
+
+        .section-title {
+            margin-top: 25px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #C8102E;
+            border-bottom: 2px solid #C8102E;
+            padding-bottom: 5px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 30px;
+            margin-top: 15px;
         }
 
         label {
             font-weight: bold;
-            display: block;
-            margin-top: 15px;
             color: #333;
         }
 
@@ -60,12 +69,13 @@
             height: 90px;
         }
 
-        .hidden {
-            display: none;
+        .buttons {
+            margin-top: 25px;
+            display: flex;
+            gap: 10px;
         }
 
         button {
-            margin-top: 25px;
             padding: 12px 25px;
             background: #C8102E;
             color: white;
@@ -76,57 +86,93 @@
             font-weight: bold;
         }
 
+        button.secondary {
+            background: #777;
+        }
+
         button:hover {
             background: #A50D24;
         }
 
-        .section-title {
-            margin-top: 25px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #C8102E;
-            border-bottom: 2px solid #C8102E;
-            padding-bottom: 5px;
+        button.secondary:hover {
+            background: #555;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #777;
+            font-size: 14px;
+            padding-bottom: 20px;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .error {
+            border-color: #C8102E;
+            background: #ffe6e6;
         }
     </style>
 </head>
 <body>
 
-<div class="header">
-    Replacement Form
-</div>
+<div class="header">Replacement Form</div>
 
 <div class="container">
 
+    <!-- Company Information -->
     <div class="section-title">Company Information</div>
 
-    <label>Company Name:</label>
-    <input id="company">
+    <div class="grid">
+        <div>
+            <label>Company Name *</label>
+            <input id="company" required>
+        </div>
 
-    <label>Address:</label>
-    <input id="address">
+        <div>
+            <label>Address *</label>
+            <input id="address" required>
+        </div>
 
-    <label>City:</label>
-    <input id="city">
+        <div>
+            <label>City *</label>
+            <input id="city" required>
+        </div>
 
-    <label>State:</label>
-    <input id="state">
+        <div>
+            <label>State *</label>
+            <input id="state" required>
+        </div>
 
-    <label>Zip Code:</label>
-    <input id="zip">
+        <div>
+            <label>Zip Code *</label>
+            <input id="zip" required>
+        </div>
 
-    <label>Country:</label>
-    <input id="country">
+        <div>
+            <label>Country *</label>
+            <input id="country" required>
+        </div>
 
-    <label>Contact Person (Full name):</label>
-    <input id="contact">
+        <div>
+            <label>Contact Person (Full name) *</label>
+            <input id="contact" required>
+        </div>
 
-    <label>Phone Number:</label>
-    <input id="phone">
+        <div>
+            <label>Phone Number *</label>
+            <input id="phone" required>
+        </div>
 
-    <label>Email:</label>
-    <input id="email">
+        <div>
+            <label>Email *</label>
+            <input id="email" type="email" required>
+        </div>
+    </div>
 
+    <!-- Incident Details -->
     <div class="section-title">Incident Details</div>
 
     <label>Is this a physical damage incident?</label>
@@ -135,49 +181,103 @@
         <option value="yes">Yes</option>
     </select>
 
-    <div id="damageFields" class="hidden">
-        <label>How long have you been working with intraoral scanners?</label>
-        <input id="experience">
+    <div id="damageFields" style="margin-top:20px; display:none;">
+        <div class="grid">
+            <div>
+                <label>Experience with intraoral scanners (Time)</label>
+                <input id="experience">
+            </div>
 
-        <label>How did the incident happen?</label>
+            <div>
+                <label>Incident cause</label>
+                <input id="cause">
+            </div>
+        </div>
+
+        <label style="margin-top:15px;">How did the incident happen?</label>
         <textarea id="incident"></textarea>
 
-        <label>What do you think caused the incident?</label>
-        <textarea id="cause"></textarea>
-
-        <label>Do you have any ideas on what could be done to prevent such incidents in the future?</label>
+        <label>Prevention ideas</label>
+	<p> Do you have any ideas on what could be done to prevent such incidents in the future? </p>
         <textarea id="prevention"></textarea>
     </div>
 
-    <button onclick="exportTXT()">Export as TXT</button>
+    <!-- Export Section -->
+    <div class="section-title">Export & Actions</div>
 
+    <div class="buttons">
+        <button onclick="exportTXT()">Export TXT</button>
+        <button onclick="copyToClipboard()">Copy to Clipboard</button>
+        <button class="secondary" onclick="resetForm()">Reset Form</button>
+    </div>
+
+</div>
+
+<div class="footer">
+    © 3Shape — Replacement Request Form - By Jose Abril
 </div>
 
 <script>
 function toggleDamageFields() {
+    const select = document.getElementById("damageSelect").value;
     const fields = document.getElementById("damageFields");
-    fields.classList.toggle("hidden", document.getElementById("damageSelect").value === "no");
+
+    if (select === "yes") {
+        fields.style.display = "block";
+    } else {
+        fields.style.display = "none";
+
+        // Clear values when hidden
+        document.getElementById("experience").value = "";
+        document.getElementById("incident").value = "";
+        document.getElementById("cause").value = "";
+        document.getElementById("prevention").value = "";
+    }
+
+    saveForm();
 }
 
-function exportTXT() {
-    const company = document.getElementById("company").value;
-    const address = document.getElementById("address").value;
-    const city = document.getElementById("city").value;
-    const state = document.getElementById("state").value;
-    const zip = document.getElementById("zip").value;
-    const country = document.getElementById("country").value;
-    const contact = document.getElementById("contact").value;
-    const phone = document.getElementById("phone").value;
-    const email = document.getElementById("email").value;
+// Auto-save
+document.querySelectorAll("input, textarea, select").forEach(el => {
+    el.addEventListener("input", saveForm);
+});
 
-    const isDamage = document.getElementById("damageSelect").value === "yes";
+function saveForm() {
+    const data = {};
+    document.querySelectorAll("input, textarea, select").forEach(el => {
+        data[el.id] = el.value;
+    });
+    localStorage.setItem("formData", JSON.stringify(data));
+}
 
-    const experience = isDamage ? document.getElementById("experience").value : "";
-    const incident = isDamage ? document.getElementById("incident").value : "";
-    const cause = isDamage ? document.getElementById("cause").value : "";
-    const prevention = isDamage ? document.getElementById("prevention").value : "";
+function loadForm() {
+    const saved = localStorage.getItem("formData");
+    if (!saved) return;
+    const data = JSON.parse(saved);
+    for (let id in data) {
+        const el = document.getElementById(id);
+        if (el) el.value = data[id];
+    }
+    toggleDamageFields();
+}
 
-    const content =
+loadForm();
+
+// Build content with conditional damage section
+function buildContent() {
+    const company   = document.getElementById("company").value;
+    const address   = document.getElementById("address").value;
+    const city      = document.getElementById("city").value;
+    const state     = document.getElementById("state").value;
+    const zip       = document.getElementById("zip").value;
+    const country   = document.getElementById("country").value;
+    const contact   = document.getElementById("contact").value;
+    const phone     = document.getElementById("phone").value;
+    const email     = document.getElementById("email").value;
+
+    const isDamage  = document.getElementById("damageSelect").value === "yes";
+
+    let content =
 `Company Name: ${company}
 Address: ${address}
 City: ${city}
@@ -187,18 +287,89 @@ Country: ${country}
 Contact Person (Full name): ${contact}
 Phone Number: ${phone}
 Email: ${email}
+`;
+
+    if (isDamage) {
+        const experience = document.getElementById("experience").value;
+        const incident   = document.getElementById("incident").value;
+        const cause      = document.getElementById("cause").value;
+        const prevention = document.getElementById("prevention").value;
+
+        content += `
 
 Experience level: ${experience}
 Incident report: ${incident}
 Incident cause: ${cause}
 Prevention: ${prevention}
 `;
+    }
+
+    return content;
+}
+
+// Export as TXT
+function exportTXT() {
+    let valid = true;
+
+    document.querySelectorAll("input[required]").forEach(el => {
+        if (!el.value.trim()) {
+            el.classList.add("error");
+            valid = false;
+        } else {
+            el.classList.remove("error");
+        }
+    });
+
+    if (!valid) {
+        alert("Please fill in all required fields.");
+        return;
+    }
+
+    const content = buildContent();
 
     const blob = new Blob([content], { type: "text/plain" });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
     link.download = "3shape_replacement_form.txt";
     link.click();
+}
+
+// Copy to Clipboard
+function copyToClipboard() {
+    let valid = true;
+
+    document.querySelectorAll("input[required]").forEach(el => {
+        if (!el.value.trim()) {
+            el.classList.add("error");
+            valid = false;
+        } else {
+            el.classList.remove("error");
+        }
+    });
+
+    if (!valid) {
+        alert("Please fill in all required fields before copying.");
+        return;
+    }
+
+    const content = buildContent();
+
+    navigator.clipboard.writeText(content)
+        .then(() => alert("Content copied to clipboard."))
+        .catch(() => alert("Unable to copy. Please try again."));
+}
+
+// Reset Form
+function resetForm() {
+    if (!confirm("Are you sure you want to clear all answers?")) return;
+
+    document.querySelectorAll("input, textarea").forEach(el => el.value = "");
+    document.getElementById("damageSelect").value = "no";
+    toggleDamageFields();
+
+    localStorage.removeItem("formData");
+
+    alert("Form has been reset.");
 }
 </script>
 
