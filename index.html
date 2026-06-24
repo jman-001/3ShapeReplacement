@@ -3,10 +3,7 @@
 <head>
     <link rel="icon" type="image/png" href="3shape_logo.png">
     <meta charset="UTF-8">
-    <title>Replacement Form</title>
-
-    <link rel="icon" type="image/png" href="favicon.png">
-
+    <title> Replacement Form</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -124,6 +121,10 @@
             border-color: #C8102E;
             background: #ffe6e6;
         }
+
+        small {
+            font-size: 12px;
+        }
     </style>
 </head>
 <body>
@@ -142,9 +143,24 @@
         <div><label>State *</label><input id="state" required></div>
         <div><label>Zip Code *</label><input id="zip" required></div>
         <div><label>Country *</label><input id="country" required></div>
+
+        <div>
+            <label>Phone Number *</label>
+            <input id="phone" required>
+            <small id="phoneError" style="color:#C8102E; display:none;">
+                Please enter a valid phone number.
+            </small>
+        </div>
+
+        <div>
+            <label>Email *</label>
+            <input id="email" type="email" required>
+            <small id="emailError" style="color:#C8102E; display:none;">
+                Please enter a valid email address.
+            </small>
+        </div>
+
         <div><label>Contact Person *</label><input id="contact" required></div>
-        <div><label>Phone Number *</label><input id="phone" required></div>
-        <div><label>Email *</label><input id="email" type="email" required></div>
     </div>
 
     <!-- Damage Type -->
@@ -184,50 +200,20 @@
 
         <div class="subsection-title">Disinfection</div>
         <div class="grid">
-            <div>
-                <label>How many times was the tip(s) disinfected?</label>
-                <input id="tip_disinfect_times">
-            </div>
-            <div>
-                <label>Chemicals used for cleaning (tradename + variant)</label>
-                <input id="tip_cleaning_chemicals">
-            </div>
-            <div>
-                <label>Chemicals used for disinfection (wiping/soaking)</label>
-                <input id="tip_disinfection_chemicals">
-            </div>
-            <div>
-                <label>Immersion time in solution</label>
-                <input id="tip_immersion_time">
-            </div>
-            <div>
-                <label>Other chemicals used</label>
-                <input id="tip_other_chemicals">
-            </div>
+            <div><label>How many times was the tip(s) disinfected?</label><input id="tip_disinfect_times"></div>
+            <div><label>Chemicals used for cleaning</label><input id="tip_cleaning_chemicals"></div>
+            <div><label>Chemicals used for disinfection</label><input id="tip_disinfection_chemicals"></div>
+            <div><label>Immersion time</label><input id="tip_immersion_time"></div>
+            <div><label>Other chemicals used</label><input id="tip_other_chemicals"></div>
         </div>
 
         <div class="subsection-title">Autoclave</div>
         <div class="grid">
-            <div>
-                <label>Number of autoclave cycles</label>
-                <input id="tip_autoclave_cycles">
-            </div>
-            <div>
-                <label>Autoclave model</label>
-                <input id="tip_autoclave_model">
-            </div>
-            <div>
-                <label>Autoclave program/settings</label>
-                <input id="tip_autoclave_settings">
-            </div>
-            <div>
-                <label>Autoclaved in airtight pouch?</label>
-                <input id="tip_airtight_pouch">
-            </div>
-            <div>
-                <label>Chemicals added to boiler feed water?</label>
-                <input id="tip_boiler_chemicals">
-            </div>
+            <div><label>Autoclave cycles</label><input id="tip_autoclave_cycles"></div>
+            <div><label>Autoclave model</label><input id="tip_autoclave_model"></div>
+            <div><label>Autoclave settings</label><input id="tip_autoclave_settings"></div>
+            <div><label>Airtight pouch?</label><input id="tip_airtight_pouch"></div>
+            <div><label>Boiler water chemicals</label><input id="tip_boiler_chemicals"></div>
         </div>
 
     </div>
@@ -259,15 +245,48 @@ function toggleDamageFields() {
     physical.classList.add("hidden");
     tips.classList.add("hidden");
 
-    if (type === "physical") {
-        physical.classList.remove("hidden");
-    }
-
-    if (type === "tips") {
-        tips.classList.remove("hidden");
-    }
+    if (type === "physical") physical.classList.remove("hidden");
+    if (type === "tips") tips.classList.remove("hidden");
 
     saveForm();
+}
+
+// LIVE VALIDATION
+document.getElementById("phone").addEventListener("input", validateContactFields);
+document.getElementById("email").addEventListener("input", validateContactFields);
+
+function validateContactFields() {
+    let valid = true;
+
+    const phone = document.getElementById("phone");
+    const email = document.getElementById("email");
+
+    const phoneError = document.getElementById("phoneError");
+    const emailError = document.getElementById("emailError");
+
+    // PHONE VALIDATION
+    const phonePattern = /^\+?[0-9\s\-()]{7,20}$/;
+    if (phone.value.trim() !== "" && !phonePattern.test(phone.value.trim())) {
+        phone.classList.add("error");
+        phoneError.style.display = "block";
+        valid = false;
+    } else {
+        phone.classList.remove("error");
+        phoneError.style.display = "none";
+    }
+
+    // EMAIL VALIDATION
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (email.value.trim() !== "" && !emailPattern.test(email.value.trim())) {
+        email.classList.add("error");
+        emailError.style.display = "block";
+        valid = false;
+    } else {
+        email.classList.remove("error");
+        emailError.style.display = "none";
+    }
+
+    return valid;
 }
 
 // Auto-save
@@ -324,7 +343,6 @@ Email: ${email}
 Damage Type: ${damageType}
 `;
 
-    // Physical Damage
     if (damageType === "physical") {
         content += `
 
@@ -335,7 +353,6 @@ Prevention: ${document.getElementById("prevention").value}
 `;
     }
 
-    // Broken Tips
     if (damageType === "tips") {
         content += `
 
@@ -360,19 +377,8 @@ Boiler water chemicals: ${document.getElementById("tip_boiler_chemicals").value}
 
 // Export as TXT
 function exportTXT() {
-    let valid = true;
-
-    document.querySelectorAll("input[required]").forEach(el => {
-        if (!el.value.trim()) {
-            el.classList.add("error");
-            valid = false;
-        } else {
-            el.classList.remove("error");
-        }
-    });
-
-    if (!valid) {
-        alert("Please fill in all required fields.");
+    if (!validateContactFields()) {
+        alert("Please correct the highlighted fields.");
         return;
     }
 
@@ -387,6 +393,11 @@ function exportTXT() {
 
 // Copy to Clipboard
 function copyToClipboard() {
+    if (!validateContactFields()) {
+        alert("Please correct the highlighted fields.");
+        return;
+    }
+
     const content = buildContent();
     navigator.clipboard.writeText(content)
         .then(() => alert("Content copied to clipboard."))
