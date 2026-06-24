@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>3Shape Replacement Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background: #C8102E;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            background: white;
+            max-width: 700px;
+            margin: 30px auto;
+            padding: 25px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+            color: #333;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        textarea {
+            height: 90px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        button {
+            margin-top: 25px;
+            padding: 12px 25px;
+            background: #C8102E;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #A50D24;
+        }
+
+        .section-title {
+            margin-top: 25px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #C8102E;
+            border-bottom: 2px solid #C8102E;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">3Shape Replacement Form</div>
+
+<div class="container">
+
+    <div class="section-title">Company Information</div>
+
+    <label>Company Name:</label>
+    <input id="company">
+
+    <label>Address:</label>
+    <input id="address">
+
+    <label>City:</label>
+    <input id="city">
+
+    <label>State:</label>
+    <input id="state">
+
+    <label>Zip Code:</label>
+    <input id="zip">
+
+    <label>Country:</label>
+    <input id="country">
+
+    <label>Contact Person (Full name):</label>
+    <input id="contact">
+
+    <label>Phone Number:</label>
+    <input id="phone">
+
+    <label>Email:</label>
+    <input id="email">
+
+    <div class="section-title">Incident Details</div>
+
+    <label>Is this a physical damage incident?</label>
+    <select id="damageSelect" onchange="toggleDamageFields()">
+        <option value="no">No</option>
+        <option value="yes">Yes</option>
+    </select>
+
+    <div id="damageFields" class="hidden">
+        <label>How long have you been working with intraoral scanners?</label>
+        <input id="experience">
+
+        <label>How did the incident happen?</label>
+        <textarea id="incident"></textarea>
+
+        <label>What do you think caused the incident?</label>
+        <textarea id="cause"></textarea>
+
+        <label>Do you have any ideas on what could be done to prevent such incidents in the future?</label>
+        <textarea id="prevention"></textarea>
+    </div>
+
+    <button onclick="exportTXT()">Export as TXT</button>
+
+</div>
+
+<script>
+function toggleDamageFields() {
+    const fields = document.getElementById("damageFields");
+    fields.classList.toggle("hidden", document.getElementById("damageSelect").value === "no");
+}
+
+function exportTXT() {
+    const company = document.getElementById("company").value;
+    const address = document.getElementById("address").value;
+    const city = document.getElementById("city").value;
+    const state = document.getElementById("state").value;
+    const zip = document.getElementById("zip").value;
+    const country = document.getElementById("country").value;
+    const contact = document.getElementById("contact").value;
+    const phone = document.getElementById("phone").value;
+    const email = document.getElementById("email").value;
+
+    const isDamage = document.getElementById("damageSelect").value === "yes";
+
+    const experience = isDamage ? document.getElementById("experience").value : "";
+    const incident = isDamage ? document.getElementById("incident").value : "";
+    const cause = isDamage ? document.getElementById("cause").value : "";
+    const prevention = isDamage ? document.getElementById("prevention").value : "";
+
+    const content =
+`Company Name: ${company}
+Address: ${address}
+City: ${city}
+State: ${state}
+Zip Code: ${zip}
+Country: ${country}
+Contact Person (Full name): ${contact}
+Phone Number: ${phone}
+Email: ${email}
+
+Experience level: ${experience}
+Incident report: ${incident}
+Incident cause: ${cause}
+Prevention: ${prevention}
+`;
+
+    const blob = new Blob([content], { type: "text/plain" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "3shape_replacement_form.txt";
+    link.click();
+}
+</script>
+
+</body>
+</html>
