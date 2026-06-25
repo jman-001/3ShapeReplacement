@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Replacement Form</title>
+
     <link rel="icon" type="image/png" href="3shape_logo.png">
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -137,12 +139,51 @@
     <div class="section-title">Company Information</div>
 
     <div class="grid">
-        <div><label>Company Name *</label><input id="company" required></div>
-        <div><label>Address *</label><input id="address" required></div>
-        <div><label>City *</label><input id="city" required></div>
-        <div><label>State *</label><input id="state" required></div>
-        <div><label>Zip Code *</label><input id="zip" required></div>
-        <div><label>Country *</label><input id="country" required></div>
+        <div style="grid-column: span 2;">
+            <label>Company Name *</label>
+            <input id="company" required>
+        </div>
+
+
+        <div>
+            <label>Address *</label>
+            <input id="address" required>
+        </div>
+
+        <div>
+            <label>Suite / Unit Number (optional)</label>
+            <input id="suite_unit">
+        </div>
+
+        <div>
+            <label>City *</label>
+            <input id="city" required>
+        </div>
+
+        <div>
+            <label>State *</label>
+            <input id="state" required>
+        </div>
+
+        <div>
+            <label>Zip Code *</label>
+            <input id="zip" required>
+        </div>
+
+        <div>
+            <label>Country *</label>
+            <input id="country" required>
+        </div>
+    </div>
+
+    <!-- Responsible Contact -->
+    <div class="section-title">Responsible Contact</div>
+
+    <div class="grid">
+        <div style="grid-column: span 2;">
+            <label>Full Name *</label>
+            <input id="contact" required>
+        </div>
 
         <div>
             <label>Phone Number *</label>
@@ -160,7 +201,6 @@
             </small>
         </div>
 
-        <div><label>Contact Person *</label><input id="contact" required></div>
     </div>
 
     <!-- Damage Type -->
@@ -215,7 +255,7 @@
         <div class="grid">
             <div><label>Autoclave cycles</label><input id="tip_autoclave_cycles"></div>
             <div><label>Autoclave model</label><input id="tip_autoclave_model"></div>
-            <div><label>Autoclave settings (Temperature and Time) </label><input id="tip_autoclave_settings"></div>
+            <div><label>Autoclave settings (time and temperature)</label><input id="tip_autoclave_settings"></div>
             <div><label>Airtight pouch?</label><input id="tip_airtight_pouch"></div>
             <div><label>Boiler water chemicals</label><input id="tip_boiler_chemicals"></div>
         </div>
@@ -240,6 +280,9 @@
 </div>
 
 <script>
+/* ------------------------------
+   SECTION TOGGLE
+--------------------------------*/
 function toggleDamageFields() {
     const type = document.getElementById("damageSelect").value;
 
@@ -255,7 +298,9 @@ function toggleDamageFields() {
     saveForm();
 }
 
-// LIVE VALIDATION
+/* ------------------------------
+   LIVE VALIDATION
+--------------------------------*/
 document.getElementById("phone").addEventListener("input", validateContactFields);
 document.getElementById("email").addEventListener("input", validateContactFields);
 document.querySelectorAll("input[required]").forEach(el => {
@@ -271,7 +316,6 @@ function validateContactFields() {
     const phoneError = document.getElementById("phoneError");
     const emailError = document.getElementById("emailError");
 
-    // PHONE VALIDATION
     const phonePattern = /^\+?[0-9\s\-()]{7,20}$/;
     if (phone.value.trim() !== "" && !phonePattern.test(phone.value.trim())) {
         phone.classList.add("error");
@@ -282,7 +326,6 @@ function validateContactFields() {
         phoneError.style.display = "none";
     }
 
-    // EMAIL VALIDATION
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (email.value.trim() !== "" && !emailPattern.test(email.value.trim())) {
         email.classList.add("error");
@@ -296,7 +339,6 @@ function validateContactFields() {
     return valid;
 }
 
-// REQUIRED FIELD VALIDATION
 function validateRequiredFields() {
     let valid = true;
 
@@ -326,7 +368,6 @@ function validateRequiredFields() {
     return valid;
 }
 
-// DAMAGE TYPE VALIDATION
 function validateDamageType() {
     const damage = document.getElementById("damageSelect");
     const damageError = document.getElementById("damageError");
@@ -342,7 +383,9 @@ function validateDamageType() {
     }
 }
 
-// Auto-save
+/* ------------------------------
+   AUTOSAVE
+--------------------------------*/
 document.querySelectorAll("input, textarea, select").forEach(el => {
     el.addEventListener("input", saveForm);
 });
@@ -368,28 +411,34 @@ function loadForm() {
 
 loadForm();
 
-// Build content with conditional sections
+/* ------------------------------
+   EXPORT CONTENT
+--------------------------------*/
 function buildContent() {
     const damageType = document.getElementById("damageSelect").value;
 
     const company   = document.getElementById("company").value;
+    const suite     = document.getElementById("suite_unit").value;
     const address   = document.getElementById("address").value;
     const city      = document.getElementById("city").value;
     const state     = document.getElementById("state").value;
     const zip       = document.getElementById("zip").value;
     const country   = document.getElementById("country").value;
+
     const contact   = document.getElementById("contact").value;
     const phone     = document.getElementById("phone").value;
     const email     = document.getElementById("email").value;
 
+
     let content =
 `Company Name: ${company}
 Address: ${address}
+Suite / Unit: ${suite}
 City: ${city}
 State: ${state}
 Zip Code: ${zip}
 Country: ${country}
-Contact Person: ${contact}
+Responsible Contact: ${contact}
 Phone Number: ${phone}
 Email: ${email}
 
@@ -428,23 +477,24 @@ Boiler water chemicals: ${document.getElementById("tip_boiler_chemicals").value}
     return content;
 }
 
-// Export as TXT
+/* ------------------------------
+   EXPORT & COPY
+--------------------------------*/
 function exportTXT() {
     if (!validateRequiredFields() || !validateDamageType() || !validateContactFields()) {
         alert("Please correct the highlighted fields.");
         return;
     }
-
+		
     const content = buildContent();
 
     const blob = new Blob([content], { type: "text/plain" });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
-    link.download = "3shape_replacement_form.txt";
+    link.download = "Replacement_form.txt";
     link.click();
 }
 
-// Copy to Clipboard
 function copyToClipboard() {
     if (!validateRequiredFields() || !validateDamageType() || !validateContactFields()) {
         alert("Please correct the highlighted fields.");
@@ -457,7 +507,9 @@ function copyToClipboard() {
         .catch(() => alert("Unable to copy."));
 }
 
-// Reset Form
+/* ------------------------------
+   RESET
+--------------------------------*/
 function resetForm() {
     if (!confirm("Are you sure you want to clear all answers?")) return;
 
