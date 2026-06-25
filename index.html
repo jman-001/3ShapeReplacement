@@ -5,14 +5,27 @@
     <title>Replacement Form</title>
 
     <link rel="icon" type="image/png" href="3shape_logo.png">
+    <img src="3shape_logo.png" class="floating-logo">
 
     <style>
+	
+
         body {
             font-family: Arial, sans-serif;
             background: #f5f5f5;
             margin: 0;
             padding: 0;
         }
+
+	.floating-logo {
+	    position: fixed;
+    	    bottom: 20px;	
+    	    right: 20px;
+	    width: 120px; /* adjust size */
+	    z-index: 9999;
+	    opacity: 0.9;
+	}
+
 
         .header {
             background: #C8102E;
@@ -135,6 +148,22 @@
 
 <div class="container">
 
+    
+
+    <label>Type of Damage:</label>
+    <select id="damageSelect" onchange="toggleDamageFields(); validateDamageType();">
+        <option value="">-- Select Damage Type --</option>
+        <option value="internal">Internal Damage</option>
+        <option value="physical">Physical Damage</option>
+        <option value="tips">Broken Tips</option>
+    </select>
+
+    <small id="damageError" style="color:#C8102E; display:none;">
+        Please select a damage type.
+    </small>
+
+
+
     <!-- Company Information -->
     <div class="section-title">Company Information</div>
 
@@ -202,22 +231,8 @@
         </div>
 
     </div>
-
-    <!-- Damage Type -->
-    <div class="section-title">Damage Type</div>
-
-    <label>Type of Damage:</label>
-    <select id="damageSelect" onchange="toggleDamageFields(); validateDamageType();">
-        <option value="">-- Select Damage Type --</option>
-        <option value="internal">Internal Damage</option>
-        <option value="physical">Physical Damage</option>
-        <option value="tips">Broken Tips</option>
-    </select>
-
-    <small id="damageError" style="color:#C8102E; display:none;">
-        Please select a damage type.
-    </small>
-
+    <!-- Additional information -->
+    <div class="section-title">Additional information</div>
     <!-- Physical Damage Section -->
     <div id="physicalSection" class="hidden" style="margin-top:20px;">
         <div class="grid">
