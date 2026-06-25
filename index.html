@@ -10,32 +10,59 @@
     <style>
 	
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
-            margin: 0;
-            padding: 0;
-        }
+	body {
+	    background:
+	        linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)),
+	        url("Trios_scanners.jpg") no-repeat center center fixed;
+	    background-size: cover;
+	    font-family: "Karbon", "Work Sans", sans-serif;
+	    margin: 0;
+	    padding: 0;
+	}
 
 	.floating-logo {
 	    position: fixed;
     	    bottom: 20px;	
     	    right: 20px;
 	    width: 120px; /* adjust size */
-	    z-index: 9999;
-	    opacity: 0.9;
+	    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
+	    opacity: 0.95;
+	    transition: 0.3s ease;
+	}
+
+	.floating-logo:hover {
+	    transform: scale(1.05);
+	    opacity: 1;
 	}
 
 
-        .header {
-            background: #C8102E;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 26px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
+	/* 3Shape Header */
+	.header {
+	    background: #fff;
+	    border-bottom: 4px solid #C8102E;
+	    background-image: linear-gradient(to left, #FFFFFF, #D3D3D3  );
+	    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+	    padding: 18px 30px;
+	    display: flex;
+	   align-items: center;
+	   gap: 15px;
+	}
+
+	/* Logo inside header */
+	.header img {
+	    height: 60px;
+	    filter: drop-shadow(0px 0px 6px rgba(255,255,255,0.6));
+	}
+
+	/* Title text */
+	.header-title {
+	    font-family: "Karbon", "Work Sans", sans-serif;
+	    font-size: 2.0rem;
+	    font-weight: 600;
+	    color: #333;
+	    letter-spacing: 0.5px;
+	}
+
 
         .container {
             background: white;
@@ -43,8 +70,8 @@
             margin: 30px auto;
             padding: 30px 40px;
             border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-            border-left: 6px solid #C8102E;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.42);
+            border-left: 3px solid #C8102E;
         }
 
         .section-title {
@@ -86,6 +113,12 @@
             border-radius: 4px;
             font-size: 14px;
         }
+
+	input:focus {
+	    outline: none;
+	    border-color: #C8102E;
+	    box-shadow: 0 0 8px rgba(200, 16, 46, 0.35);
+	}
 
         textarea {
             height: 90px;
@@ -144,7 +177,10 @@
 </head>
 <body>
 
-<div class="header">Replacement Form</div>
+<div class="header">
+    <img src="3shape_logo.png" alt="3Shape Logo">
+    <div class="header-title">Replacement Form</div>
+</div>
 
 <div class="container">
 
