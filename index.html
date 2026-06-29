@@ -173,6 +173,21 @@
         small {
             font-size: 12px;
         }
+
+.subgrid {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* dropdown smaller, input larger */
+    gap: 10px;
+}
+
+.subgrid select,
+.subgrid input {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
     </style>
 </head>
 <body>
@@ -219,10 +234,20 @@
             <input id="address" required>
         </div>
 
-        <div>
-            <label>Suite / Unit Number (optional)</label>
-            <input id="suite_unit">
+    <div class="address-subgrid">
+        <label>Suite / Unit Number (optional)</label>
+        <div class="subgrid">
+            <select id="locationType">
+                <option value="">--Select--</option>
+                <option value="Suite">Suite</option>
+                <option value="Unit">Unit</option>
+                <option value="Office">Office</option>
+                <option value="Other">Other (please type)</option>
+            </select>
+            <input type="text" id="locationNumber" placeholder="Number">
         </div>
+    </div>
+
 
         <div>
             <label>City *</label>
@@ -485,7 +510,11 @@ function buildContent() {
     const damageType = document.getElementById("damageSelect").value;
 
     const company   = document.getElementById("company").value;
-    const suite     = document.getElementById("suite_unit").value;
+    const locationType = document.getElementById("locationType").value;
+    const locationNumber = document.getElementById("locationNumber").value;
+    const suite = (locationNumber.trim() !== "")
+        ? `\n Suite / Unit: ${locationType} ${locationNumber}`
+        : "";
     const address   = document.getElementById("address").value;
     const city      = document.getElementById("city").value;
     const state     = document.getElementById("state").value;
@@ -500,8 +529,7 @@ function buildContent() {
 
     let content =
 `Company Name: ${company}
-Address: ${address}
-Suite / Unit: ${suite}
+Address: ${address} ${suite}
 City: ${city}
 State: ${state}
 Zip Code: ${zip}
@@ -583,6 +611,7 @@ function resetForm() {
 
     document.querySelectorAll("input, textarea").forEach(el => el.value = "");
     document.getElementById("damageSelect").value = "";
+    document.getElementById("locationType").value = "";
     toggleDamageFields();
 
     localStorage.removeItem("formData");
