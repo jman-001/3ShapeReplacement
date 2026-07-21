@@ -395,9 +395,6 @@ function toggleDamageFields() {
 --------------------------------*/
 document.getElementById("phone").addEventListener("input", validateContactFields);
 document.getElementById("email").addEventListener("input", validateContactFields);
-document.querySelectorAll("input[required]").forEach(el => {
-    el.addEventListener("input", validateRequiredFields);
-});
 
 function validateContactFields() {
     let valid = true;
@@ -537,6 +534,12 @@ Country: ${country}
 Responsible Contact: ${first_name} ${last_name}
 Phone Number: ${phone}
 Email: ${email}
+
+Dongle Replaced:
+Latest Deployment Date:
+Scanner replaced:
+Subscription Type:
+Direct Subscription?:
 
 Damage Type: ${damageType}
 `;
