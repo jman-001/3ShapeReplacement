@@ -1,0 +1,491 @@
+/* =========================================================
+   LAYOUT.CSS
+   Shared page structure and layout
+   ========================================================= */
+
+
+/* =========================================================
+   1. PAGE BACKGROUND
+   ========================================================= */
+
+body {
+    background:
+        linear-gradient(
+            rgba(255, 255, 255, 0.75),
+            rgba(255, 255, 255, 0.75)
+        ),
+        url("../assets/images/Trios_scanners.jpg")
+        no-repeat
+        center center
+        fixed;
+
+    background-size: cover;
+}
+
+
+/* =========================================================
+   2. HEADER
+   ========================================================= */
+
+.header {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 18px 30px;
+
+    background:
+        linear-gradient(
+            to left,
+            #FFFFFF,
+            #D3D3D3
+        );
+
+    border-bottom: 4px solid var(--brand-red);
+
+    box-shadow: var(--shadow-header);
+}
+
+
+/* Header logo */
+
+.header img {
+    height: 60px;
+
+    filter:
+        drop-shadow(
+            0 0 6px rgba(255, 255, 255, 0.6)
+        );
+}
+
+
+/* Header title */
+
+.header-title {
+    font-family: var(--font-primary);
+
+    font-size: 2rem;
+    font-weight: 600;
+
+    color: var(--color-text);
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   3. MAIN CONTAINER
+   ========================================================= */
+
+.container {
+    width: calc(100% - 40px);
+    max-width: 1080px;
+
+    margin: 10px auto;
+    padding: 10px 40px;
+
+    background: var(--color-white);
+
+    /*border-left: 3px solid var(--brand-red);*/
+    /*border-radius: var(--radius-lg);*/
+
+    /*box-shadow: var(--shadow-container);*/
+}
+
+
+/* =========================================================
+   4. GRID SYSTEM
+   ========================================================= */
+
+.grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px 30px;
+
+    margin-top: 15px;
+}
+
+
+/* Smaller two-column grid */
+
+.subgrid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 2fr);
+
+    gap: 10px;
+}
+
+
+/* =========================================================
+   5. FOOTER
+   ========================================================= */
+
+.footer {
+    margin-top: 40px;
+    padding-bottom: 20px;
+
+    color: var(--color-text-light);
+
+    font-size: 14px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   6. FLOATING LOGO
+   ========================================================= */
+
+.floating-logo {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    width: 120px;
+
+    opacity: 0.95;
+
+    filter:
+        drop-shadow(
+            0 4px 8px rgba(0, 0, 0, 0.25)
+        );
+
+    transition: 0.3s ease;
+}
+
+.floating-logo:hover {
+    transform: scale(1.05);
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   7. RESPONSIVE LAYOUT
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .header {
+        padding: 15px 20px;
+    }
+
+    .header img {
+        height: 45px;
+    }
+
+    .header-title {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        width: calc(100% - 20px);
+
+        margin: 20px auto;
+        padding: 25px 20px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .floating-logo {
+        width: 80px;
+
+        right: 10px;
+        bottom: 10px;
+    }
+}
+
+/* =========================================================
+   TOOL CARD
+   ========================================================= */
+
+.tool-card {
+    margin-top: 20px;
+    padding: 20px;
+
+    background: var(--color-background-light);
+
+    border-left: 3px solid var(--brand-red);
+    border-radius: var(--radius-md);
+}
+
+.tool-card h2 {
+    margin-top: 0;
+}
+
+/* =========================================================
+   PAGE LAYOUT
+   ========================================================= */
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+#main-content {
+    width: 100%;
+}
+
+
+/* =========================================================
+   CONTENT CONTAINER
+   ========================================================= */
+
+.page-container {
+    width: min(
+        calc(100% - (var(--page-padding) * 2)),
+        var(--content-width)
+    );
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.page-header {
+    width: min(
+        calc(100% - (var(--page-padding) * 2)),
+        var(--content-width)
+    );
+
+    margin: 0 auto;
+
+    padding-top: 90px;
+    padding-bottom: 60px;
+}
+
+.page-header h1 {
+    margin-bottom: 18px;
+}
+
+.page-header p {
+    max-width: 650px;
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   GENERAL CONTENT
+   ========================================================= */
+
+.page-content {
+    width: min(
+        calc(100% - (var(--page-padding) * 2)),
+        var(--content-width)
+    );
+
+    margin: 0 auto;
+
+    padding-bottom: 100px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+#site-footer {
+    border-top: 1px solid var(--color-border);
+
+    padding: 25px var(--page-padding);
+
+    background-color: var(--color-background);
+}
+
+#site-footer p {
+    width: min(
+        100%,
+        var(--content-width)
+    );
+
+    margin: 0 auto;
+
+    font-size: 13px;
+}
+
+/* =========================================================
+   HOME HERO
+   ========================================================= */
+
+.home-hero {
+    width: min(
+        calc(100% - (var(--page-padding) * 2)),
+        var(--content-width)
+    );
+
+    min-height: calc(100vh - var(--navigation-height));
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1.3fr 0.7fr;
+
+    align-items: center;
+
+    gap: 100px;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
+.home-hero-content {
+    max-width: 700px;
+}
+
+
+.home-eyebrow {
+    margin-bottom: 22px;
+
+    color: var(--color-accent);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+}
+
+
+.home-hero h1 {
+    margin-bottom: 28px;
+
+    color: var(--color-black);
+
+    font-size: 64px;
+    font-weight: 400;
+
+    line-height: 1.08;
+}
+
+
+.home-description {
+    max-width: 580px;
+
+    margin: 0;
+
+    color: var(--color-text-light);
+
+    font-size: 19px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   ACTION PANEL
+   ========================================================= */
+
+.home-actions {
+    width: 100%;
+    max-width: 430px;
+
+    padding: 34px 36px;
+
+    border: 1px solid var(--color-border);
+
+    background: var(--color-white);
+}
+
+
+.home-actions-title {
+    margin-bottom: 12px;
+
+    color: var(--color-text-light);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   ACTION
+   ========================================================= */
+
+.home-action {
+    min-height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0;
+
+    border-bottom: 1px solid var(--color-border);
+
+    color: var(--color-text);
+
+    font-size: 16px;
+
+    transition:
+        color 0.2s ease,
+        padding 0.2s ease;
+}
+
+
+.home-action:last-child {
+    border-bottom: none;
+}
+
+
+.home-action:hover {
+    color: var(--color-accent);
+
+    padding-left: 5px;
+}
+
+
+.home-action-arrow {
+    font-size: 20px;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.home-action:hover .home-action-arrow {
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   PRIVATE ACTIONS
+   ========================================================= */
+
+.home-action-private {
+    color: var(--color-text-light);
+
+    cursor: default;
+}
+
+
+.home-action-private:hover {
+    color: var(--color-text-light);
+
+    padding-left: 0;
+}
+
+
+.home-action-lock {
+    font-size: 13px;
+
+    opacity: 0.6;
+}

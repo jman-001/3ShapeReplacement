@@ -1,0 +1,352 @@
+/* =========================================================
+   INSTALLERS.CSS
+   ========================================================= */
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.installers-page {
+
+    width: min(
+        calc(100% - 80px),
+        1080px
+    );
+
+    margin: 0 auto;
+
+    padding: 60px 0 90px;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.installers-intro {
+
+    margin-bottom: 55px;
+}
+
+
+.installers-eyebrow {
+
+    margin: 0 0 10px;
+
+    color: var(--brand-red);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+}
+
+
+.installers-intro h1 {
+
+    margin: 0 0 15px;
+
+    color: var(--color-text);
+
+    font-size: 46px;
+    font-weight: 400;
+
+    line-height: 1.1;
+}
+
+
+.installers-description {
+
+    max-width: 650px;
+
+    margin: 0;
+
+    color: var(--color-text-light);
+
+    font-size: 16px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   MAIN INSTALLER CONTAINER
+   ========================================================= */
+
+.installer-section {
+
+    padding: 32px;
+
+    background: var(--color-white);
+
+    border: 1px solid var(--color-border);
+}
+
+
+/* =========================================================
+   SECTION HEADER
+   ========================================================= */
+
+.installer-section-header {
+
+    margin-bottom: 25px;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid var(--color-border);
+}
+
+
+.installer-section-header h2 {
+
+    margin: 0 0 7px;
+
+    color: var(--color-text);
+
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+.installer-section-header p {
+
+    margin: 0;
+
+    color: var(--color-text-light);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   INSTALLER FAMILY
+   ========================================================= */
+
+.installer-family {
+
+    border: 1px solid #dfe1e4;
+
+    background: #ffffff;
+}
+
+
+.installer-family + .installer-family {
+
+    margin-top: 10px;
+}
+
+
+/* =========================================================
+   FAMILY HEADER
+   ========================================================= */
+
+.installer-family-header {
+
+    width: 100%;
+
+    min-height: 58px;
+
+    padding: 0 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: #ffffff;
+
+    color: var(--color-text);
+
+    border: none;
+
+    border-radius: 0;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition:
+        background-color 0.2s ease;
+}
+
+
+.installer-family-header:hover {
+
+    background: #f7f7f8;
+}
+
+
+.installer-family-name {
+
+    font-size: 15px;
+    font-weight: 600;
+
+    letter-spacing: 0.02em;
+}
+
+
+.installer-family-arrow {
+
+    color: var(--brand-red);
+
+    font-size: 16px;
+
+    line-height: 1;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+/* =========================================================
+   VERSION LIST
+   ========================================================= */
+
+.installer-versions {
+
+    border-top: 1px solid #e2e3e5;
+}
+
+
+.installer-versions[hidden] {
+
+    display: none;
+}
+
+
+/* =========================================================
+   VERSION ROW
+   ========================================================= */
+
+.installer-version {
+
+    min-height: 64px;
+
+    padding: 0 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    border-bottom: 1px solid #eeeeef;
+}
+
+
+.installer-version:last-child {
+
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   VERSION INFORMATION
+   ========================================================= */
+
+.installer-version-info {
+
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 12px;
+}
+
+
+.installer-version-label {
+
+    color: #858a91;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.1em;
+}
+
+
+.installer-version-number {
+
+    color: var(--color-text);
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   DOWNLOAD BUTTON
+   ========================================================= */
+
+.installer-download {
+
+    flex-shrink: 0;
+
+    min-width: 105px;
+
+    height: 36px;
+
+    padding: 0 15px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    background: transparent;
+
+    color: var(--brand-red);
+
+    border: 1px solid var(--brand-red);
+
+    border-radius: 2px;
+
+    font-family: inherit;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.05em;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.installer-download span {
+
+    font-size: 15px;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.installer-download:hover {
+
+    background: var(--brand-red);
+
+    color: var(--color-white);
+}
+
+
+.installer-download:hover span {
+
+    transform: translateX(3px);
+}

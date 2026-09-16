@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =====================================================
+         DOCUMENT INFORMATION
+         ===================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="3Shape Replacement Request Form"
+    >
+
+    <title>Replacement Form</title>
+
+
+    <!-- =====================================================
+         FAVICON
+         ===================================================== -->
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="../assets/images/3shape_logo.png"
+    >
+
+
+    <!-- =====================================================
+         STYLESHEETS
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/layout.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/replacement.css"
+    >
+
+    <link 
+        rel="stylesheet" 
+        href="../css/navigation.css"
+    >
+
+        <link 
+        rel="stylesheet" 
+        href="../css/installers.css"
+    >
+
+    <script src="../js/support-mode.js"></script>
+    <script src="../js/main.js"></script>
+
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+<header id="site-header">
+        <a
+            href="../index.html"
+            class="navigation-logo"
+            aria-label="3Shape Internal Tools"
+    
+            
+        >
+
+            <img
+                src="../assets/images/3shape_words.svg"
+                height="30"
+                alt="3Shape"
+                margin-left="100"
+            >
+
+        </a>
+
+        <nav class="site-navigation">
+
+
+
+            <div class="navigation-menu">
+
+                <a
+                    href="replacement.html"
+                    class="navigation-item active"
+                >
+                    Replacement Form
+                </a>
+
+                <a
+                    href="replacement.html"
+                    class="navigation-item"
+                >
+                    Resources
+                </a>
+
+
+                <a
+                    href="reference-pictures.html"
+                    class="navigation-item private-navigation"
+                    data-private-navigation
+                >
+                    Reference Pictures
+                </a>
+
+
+                <a
+                    href="installers.html"
+                    class="navigation-item private-navigation"
+                    data-private-navigation
+                >
+                    Installers
+                </a>
+
+
+                <a
+                    href="tools-commands.html"
+                    class="navigation-item private-navigation"
+                    data-private-navigation
+                >
+                    Tools &amp; Commands
+                </a>
+
+
+
+    </div>
+
+        </nav>
+
+        <div
+            class="support-mode-indicator private-navigation"
+            id="support-mode-indicator"
+            data-private-navigation
+        >
+            SUPPORT MODE
+        </div>
+
+</header>
+
+    <!-- =====================================================
+         FLOATING LOGO
+         ===================================================== -->
+
+    <button
+        type="button"
+        id="support-mode-trigger"
+        class="support-mode-button"
+        aria-label="Support Mode"
+    >
+        <img
+            src="../assets/images/3shape_logo.png"
+            alt=""
+    >
+        
+    </button>
+
+    <main class="replacement-page">
+        <section class="installers-intro">
+
+            <p class="installers-eyebrow">
+                INTERNAL SUPPORT RESOURCE
+            </p>
+
+            <h1>
+                Replacement form
+            </h1>
+
+            <p class="installers-description">
+                A tool to use when 3Shape support has identified a replacement is necessary. 
+            </p>
+
+        </section>
+    </main>
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+    <main class="container">
+        
+
+        <!-- =================================================
+             DAMAGE TYPE
+             ================================================= -->
+
+        <div class="form-group">
+
+            <label for="damageSelect"
+            class="section-title">
+                Type of Damage:
+            </label>
+
+            <select id="damageSelect">
+
+                <option value="">
+                    -- Select Damage Type --
+                </option>
+
+                <option value="internal">
+                    Internal Damage
+                </option>
+
+                <option value="physical">
+                    Physical Damage
+                </option>
+
+                <option value="tips">
+                    Broken Tips
+                </option>
+
+            </select>
+
+            <small
+                id="damageError"
+                class="validation-message"
+            >
+                Please select a damage type.
+            </small>
+
+        </div>
+
+
+    </main>
+    
+    <main class="container">
+
+
+        <!-- =================================================
+             COMPANY INFORMATION
+             ================================================= -->
+
+        <section>
+
+            <div class="section-title">
+                Company Information
+            </div>
+
+
+            <div class="grid">
+
+
+                <!-- Company Name -->
+
+                <div class="form-group form-group-full">
+
+                    <label for="company">
+                        Company Name *
+                    </label>
+
+                    <input
+                        id="company"
+                        type="text"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Address -->
+
+                <div class="form-group">
+
+                    <label for="address">
+                        Address *
+                    </label>
+
+                    <input
+                        id="address"
+                        type="text"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Suite / Unit -->
+
+                <div class="form-group">
+
+                    <label for="locationType">
+                        Suite / Unit (optional)
+                    </label>
+
+                    <div class="subgrid">
+
+                        <select id="locationType">
+
+                            <option value="">
+                                -- Select --
+                            </option>
+
+                            <option value="Suite">
+                                Suite
+                            </option>
+
+                            <option value="Unit">
+                                Unit
+                            </option>
+
+                            <option value="Office">
+                                Office
+                            </option>
+
+                            <option value="Other">
+                                Other (please type)
+                            </option>
+
+                        </select>
+
+                        <input
+                            type="text"
+                            id="locationNumber"
+                            placeholder="Number"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- City -->
+
+                <div class="form-group">
+
+                    <label for="city">
+                        City *
+                    </label>
+
+                    <input
+                        id="city"
+                        type="text"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- State -->
+
+                <div class="form-group">
+
+                    <label for="state">
+                        State *
+                    </label>
+
+                    <input
+                        id="state"
+                        type="text"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Zip -->
+
+                <div class="form-group">
+
+                    <label for="zip">
+                        Zip Code *
+                    </label>
+
+                    <input
+                        id="zip"
+                        type="text"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Country -->
+
+                <div class="form-group">
+
+                    <label for="country">
+                        Country *
+                    </label>
+
+                    <input
+                        id="country"
+                        type="text"
+                        required
+                    >
+
+                </div>
+
+
+            </div>
+
+        </section>
+        <!-- =================================================
+             RESPONSIBLE CONTACT
+             ================================================= -->
+
+        <section>
+
+            <div class="section-title">
+                Responsible Contact
+            </div>
+
+
+            <div class="grid">
+
+
+                <!-- First Name -->
+
+                <div class="form-group">
+
+                    <label for="first_name">
+                        First Name *
+                    </label>
+
+                    <input
+                        id="first_name"
+                        type="text"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Last Name -->
+
+                <div class="form-group">
+
+                    <label for="last_name">
+                        Last Name *
+                    </label>
+
+                    <input
+                        id="last_name"
+                        type="text"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Phone -->
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        Phone Number *
+                    </label>
+
+                    <input
+                        id="phone"
+                        type="tel"
+                        required
+                    >
+
+                    <small
+                        id="phoneError"
+                        class="validation-message"
+                    >
+                        Please enter a valid phone number.
+                    </small>
+
+                </div>
+
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email *
+                    </label>
+
+                    <input
+                        id="email"
+                        type="email"
+                        required
+                    >
+
+                    <small
+                        id="emailError"
+                        class="validation-message"
+                    >
+                        Please enter a valid email address.
+                    </small>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+<div
+    id="additionalcontainer"
+    class="conditional-section hidden"
+>
+    <main class="container">
+        <!-- =================================================
+             ADDITIONAL INFORMATION
+             ================================================= -->
+
+        <section>
+
+            <div class="section-title">
+                Additional Information
+            </div>
+
+
+            <!-- =================================================
+                 PHYSICAL DAMAGE
+                 ================================================= -->
+
+            <div
+                id="physicalSection"
+                class="conditional-section hidden"
+            >
+
+                <div class="grid">
+
+
+                    <!-- Experience -->
+
+                    <div class="form-group">
+
+                        <label for="experience">
+                            Experience with intraoral scanners
+                        </label>
+
+                        <input
+                            id="experience"
+                            type="text"
+                        >
+
+                    </div>
+
+
+                    <!-- Cause -->
+
+                    <div class="form-group">
+
+                        <label for="cause">
+                            Incident cause
+                        </label>
+
+                        <input
+                            id="cause"
+                            type="text"
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- Incident -->
+
+                <div class="form-group">
+
+                    <label for="incident">
+                        How did the incident happen?
+                    </label>
+
+                    <textarea id="incident"></textarea>
+
+                </div>
+
+
+                <!-- Prevention -->
+
+                <div class="form-group">
+
+                    <label for="prevention">
+                        Prevention ideas
+                    </label>
+
+                    <textarea id="prevention"></textarea>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =================================================
+                 BROKEN TIPS
+                 ================================================= -->
+
+            <div
+                id="tipsSection"
+                class="conditional-section hidden"
+            >
+
+
+                <!-- =================================================
+                     DISINFECTION
+                     ================================================= -->
+
+                <div class="subsection-title">
+                    Disinfection
+                </div>
+
+
+                <div class="grid">
+
+
+                    <div class="form-group">
+
+                        <label for="tip_disinfect_times">
+                            How many times was the tip(s)
+                            disinfected?
+                        </label>
+
+                        <input
+                            id="tip_disinfect_times"
+                            type="text"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="tip_cleaning_chemicals">
+                            Chemicals used for cleaning
+                        </label>
+
+                        <input
+                            id="tip_cleaning_chemicals"
+                            type="text"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="tip_disinfection_chemicals">
+                            Chemicals used for disinfection
+                        </label>
+
+                        <input
+                            id="tip_disinfection_chemicals"
+                            type="text"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="tip_immersion_time">
+                            Immersion time
+                        </label>
+
+                        <input
+                            id="tip_immersion_time"
+                            type="text"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="tip_other_chemicals">
+                            Other chemicals used
+                        </label>
+
+                        <input
+                            id="tip_other_chemicals"
+                            type="text"
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- =================================================
+                     AUTOCLAVE
+                     ================================================= -->
+
+                <div class="subsection-title">
+                    Autoclave
+                </div>
+
+
+                <div class="grid">
+
+
+                    <div class="form-group">
+
+                        <label for="tip_autoclave_cycles">
+                            Autoclave cycles
+                        </label>
+
+                        <input
+                            id="tip_autoclave_cycles"
+                            type="text"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="tip_autoclave_model">
+                            Autoclave model
+                        </label>
+
+                        <input
+                            id="tip_autoclave_model"
+                            type="text"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="tip_autoclave_settings">
+                            Autoclave settings
+                            (time and temperature)
+                        </label>
+
+                        <input
+                            id="tip_autoclave_settings"
+                            type="text"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="tip_airtight_pouch">
+                            Airtight pouch?
+                        </label>
+
+                        <input
+                            id="tip_airtight_pouch"
+                            type="text"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="tip_boiler_chemicals">
+                            Boiler water chemicals
+                        </label>
+
+                        <input
+                            id="tip_boiler_chemicals"
+                            type="text"
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+    </main>
+</div>
+    <main class="container">
+        <!-- =================================================
+             EXPORT & ACTIONS
+             ================================================= -->
+
+        <section>
+
+            <div class="section-title">
+                Export &amp; Actions
+            </div>
+
+            <p>
+                Choose an action below:
+            </p>
+
+
+            <div class="buttons">
+
+
+                <button
+                    type="button"
+                    id="exportTxtButton"
+                >
+                    Export as TXT
+                </button>
+
+
+                <button
+                    type="button"
+                    id="copyButton"
+                >
+                    Copy to Clipboard
+                </button>
+
+
+                <button
+                    type="button"
+                    id="resetButton"
+                    class="secondary"
+                >
+                    Reset Form
+                </button>
+
+
+            </div>
+
+        </section>
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="footer">
+
+        <div>
+            © 3Shape — Replacement Request Form
+        </div>
+
+        <p>
+
+            <strong>
+                Privacy Notice:
+            </strong>
+
+            The information entered in this form is not
+            stored on any server or shared with external
+            services.
+
+            All data remains local to your device and is
+            not transmitted.
+
+        </p>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="../js/validation.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/export.js"></script>
+    <script src="../js/main.js"></script>
+
+
+</body>
+
+</html>

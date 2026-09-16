@@ -1,627 +1,213 @@
-<!DOCTYPE html>
-<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Replacement Form</title>
-
-    <link rel="icon" type="image/png" href="3shape_logo.png">
-    <img src="3shape_logo.png" class="floating-logo">
-
-    <style>
-	
-
-	body {
-	    background:
-	        linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)),
-	        url("Trios_scanners.jpg") no-repeat center center fixed;
-	    background-size: cover;
-	    font-family: "Karbon", "Work Sans", sans-serif;
-	    margin: 0;
-	    padding: 0;
-	}
-
-	.floating-logo {
-	    position: fixed;
-    	    bottom: 20px;	
-    	    right: 20px;
-	    width: 120px; /* adjust size */
-	    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
-	    opacity: 0.95;
-	    transition: 0.3s ease;
-	}
-
-	.floating-logo:hover {
-	    transform: scale(1.05);
-	    opacity: 1;
-	}
-
-
-	/* 3Shape Header */
-	.header {
-	    background: #fff;
-	    border-bottom: 4px solid #C8102E;
-	    background-image: linear-gradient(to left, #FFFFFF, #D3D3D3  );
-	    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-	    padding: 18px 30px;
-	    display: flex;
-	   align-items: center;
-	   gap: 15px;
-	}
-
-	/* Logo inside header */
-	.header img {
-	    height: 60px;
-	    filter: drop-shadow(0px 0px 6px rgba(255,255,255,0.6));
-	}
-
-	/* Title text */
-	.header-title {
-	    font-family: "Karbon", "Work Sans", sans-serif;
-	    font-size: 2.0rem;
-	    font-weight: 600;
-	    color: #333;
-	    letter-spacing: 0.5px;
-	}
-
-
-        .container {
-            background: white;
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 30px 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.42);
-            border-left: 3px solid #C8102E;
-        }
-
-        .section-title {
-            margin-top: 25px;
-            font-size: 20px;
-            font-weight: bold;
-            color: #C8102E;
-            border-bottom: 2px solid #C8102E;
-            padding-bottom: 5px;
-        }
-
-        .subsection-title {
-            margin-top: 20px;
-            font-size: 15px;
-            font-weight: bold;
-            color: #444;
-            background: #f0f0f0;
-            padding: 6px 10px;
-            border-radius: 4px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px 30px;
-            margin-top: 15px;
-        }
-
-        label {
-            font-weight: bold;
-            color: #333;
-        }
-
-        input, textarea, select {
-            width: 100%;
-            padding: 8px;
-            margin-top: 6px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-
-	input:focus {
-	    outline: none;
-	    border-color: #C8102E;
-	    box-shadow: 0 0 8px rgba(200, 16, 46, 0.35);
-	}
-
-        textarea {
-            height: 90px;
-        }
-
-        .buttons {
-            margin-top: 25px;
-            display: flex;
-            gap: 10px;
-        }
-
-        button {
-            padding: 12px 25px;
-            background: #C8102E;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        button.secondary {
-            background: #777;
-        }
-
-        button:hover {
-            background: #A50D24;
-        }
-
-        button.secondary:hover {
-            background: #555;
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            color: #777;
-            font-size: 14px;
-            padding-bottom: 20px;
-        }
-
-        .hidden {
-            display: none !important;
-        }
-
-        .error {
-            border-color: #C8102E;
-            background: #ffe6e6;
-        }
-
-        small {
-            font-size: 12px;
-        }
-
-.subgrid {
-    display: grid;
-    grid-template-columns: 1fr 2fr; /* dropdown smaller, input larger */
-    gap: 10px;
-}
-
-.subgrid select,
-.subgrid input {
-    padding: 8px 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 0.95rem;
-}
-
-    </style>
+    <script src="js/support-mode.js"></script>
+    <script src="js/main.js"></script>
 </head>
-<body>
 
-<div class="header">
-    <img src="3shape_logo.png" alt="3Shape Logo">
-    <div class="header-title">Replacement Form</div>
-
-</div>
-
-
-
-
-<div class="container">
-
+<header id="site-header">
+        <a
+            href="index.html"
+            class="navigation-logo"
+            aria-label="3Shape Internal Tools"
     
+            
+        >
 
-    <label>Type of Damage:</label>
-    <select id="damageSelect" onchange="toggleDamageFields(); validateDamageType();">
-        <option value="">-- Select Damage Type --</option>
-        <option value="internal">Internal Damage</option>
-        <option value="physical">Physical Damage</option>
-        <option value="tips">Broken Tips</option>
-    </select>
+            <img
+                src="assets/images/3shape_words.svg"
+                height="30"
+                alt="3Shape"
+                margin-left="100"
+            >
 
-    <small id="damageError" style="color:#C8102E; display:none;">
-        Please select a damage type.
-    </small>
+        </a>
 
-
-
-    <!-- Company Information -->
-    <div class="section-title">Company Information</div>
-
-    <div class="grid">
-        <div style="grid-column: span 2;">
-            <label>Company Name *</label>
-            <input id="company" required>
-        </div>
+        <nav class="site-navigation">
 
 
-        <div>
-            <label>Address *</label>
-            <input id="address" required>
-        </div>
 
-    <div class="address-subgrid">
-        <label>Suite / Unit (optional)</label>
-        <div class="subgrid">
-            <select id="locationType">
-                <option value="">--Select--</option>
-                <option value="Suite">Suite</option>
-                <option value="Unit">Unit</option>
-                <option value="Office">Office</option>
-                <option value="Other">Other (please type)</option>
-            </select>
-            <input type="text" id="locationNumber" placeholder="Number">
-        </div>
+            <div class="navigation-menu">
+
+                <a
+                    href="pages/replacement.html"
+                    class="navigation-item"
+                >
+                    Replacement Form
+                </a>
+
+                <a
+                    href="pages/replacement.html"
+                    class="navigation-item"
+                >
+                    Resources
+                </a>
+
+
+                <a
+                    href="pages/reference-pictures.html"
+                    class="navigation-item private-navigation"
+                    data-private-navigation
+                >
+                    Reference Pictures
+                </a>
+
+
+                <a
+                    href="pages/installers.html"
+                    class="navigation-item private-navigation"
+                    data-private-navigation
+                >
+                    Installers
+                </a>
+
+
+                <a
+                    href="pages/tools-commands.html"
+                    class="navigation-item private-navigation"
+                    data-private-navigation
+                >
+                    Tools &amp; Commands
+                </a>
+
+
+
     </div>
 
+        </nav>
 
-        <div>
-            <label>City *</label>
-            <input id="city" required>
+        <div
+            class="support-mode-indicator private-navigation"
+            id="support-mode-indicator"
+            data-private-navigation
+        >
+            SUPPORT MODE
         </div>
 
-        <div>
-            <label>State *</label>
-            <input id="state" required>
+</header>
+
+<button
+    type="button"
+    id="support-mode-trigger"
+    class="support-mode-button"
+    aria-label="Support Mode"
+>
+    <img
+        src="assets/images/3shape_logo.png"
+        alt=""
+    >
+</button>
+
+<link rel="stylesheet" href="css/navigation.css">
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/layout.css">
+
+<main id="main-content">
+
+    <section class="home-hero">
+
+        <div class="home-hero-content">
+
+            <p class="home-eyebrow">
+                INTERNAL SUPPORT TOOLS
+            </p>
+
+            <h1>
+                Tools to help you
+                solve support cases faster.
+            </h1>
+
+            <p class="home-description">
+                A collection of utilities, references and resources
+                designed to simplify everyday support workflows.
+            </p>
+
         </div>
 
-        <div>
-            <label>Zip Code *</label>
-            <input id="zip" required>
-        </div>
 
-        <div>
-            <label>Country *</label>
-            <input id="country" required>
-        </div>
-    </div>
+        <div class="home-actions">
 
-    <!-- Responsible Contact -->
-    <div class="section-title">Responsible Contact</div>
-
-    <div class="grid">
-        <div >
-            <label>First Name *</label>
-            <input id="first_name" required>
-        </div>
-
-        <div>
-            <label>Last Name *</label>
-            <input id="last_name" required>
-        </div>
+            <p class="home-actions-title">
+                I WANT TO...
+            </p>
 
 
+            <a
+                href="pages/replacement.html"
+                class="home-action"
+            >
 
-        <div>
-            <label>Phone Number *</label>
-            <input id="phone" required>
-            <small id="phoneError" style="color:#C8102E; display:none;">
-                Please enter a valid phone number.
-            </small>
-        </div>
+                <span>
+                    Submit a replacement
+                </span>
 
-        <div>
-            <label>Email *</label>
-            <input id="email" type="email" required>
-            <small id="emailError" style="color:#C8102E; display:none;">
-                Please enter a valid email address.
-            </small>
-        </div>
+                <span class="home-action-arrow">
+                    →
+                </span>
 
-    </div>
-    <!-- Additional information -->
-    <div class="section-title">Additional information</div>
-    <!-- Physical Damage Section -->
-    <div id="physicalSection" class="hidden" style="margin-top:20px;">
-        <div class="grid">
-            <div>
-                <label>Experience with intraoral scanners</label>
-                <input id="experience">
+            </a>
+
+            <div
+                class="home-action"
+            >
+
+                <span>
+                    View public resources
+                </span>
+
+                <span class="home-action-arrow">
+                    →
+                </span>
+
             </div>
 
-            <div>
-                <label>Incident cause</label>
-                <input id="cause">
+            <div
+                class="home-action home-action-private"
+                data-private="true"
+            >
+
+                <span>
+                    View support resources
+                </span>
+
+                <span class="home-action-lock">
+                    🔒
+                </span>
+
             </div>
+
+
+            <div
+                class="home-action home-action-private"
+                data-private="true"
+            >
+
+                <span>
+                    Access installers
+                </span>
+
+                <span class="home-action-lock">
+                    🔒
+                </span>
+
+            </div>
+
+
+            <div
+                class="home-action home-action-private"
+                data-private="true"
+            >
+
+                <span>
+                    Open tools &amp; commands
+                </span>
+
+                <span class="home-action-lock">
+                    🔒
+                </span>
+
+            </div>
+
         </div>
 
-        <label style="margin-top:15px;">How did the incident happen?</label>
-        <textarea id="incident"></textarea>
+    </section>
 
-        <label>Prevention ideas</label>
-        <textarea id="prevention"></textarea>
-    </div>
-
-    <!-- Broken Tips Section -->
-    <div id="tipsSection" class="hidden" style="margin-top:20px;">
-
-        <div class="subsection-title">Disinfection</div>
-        <div class="grid">
-            <div><label>How many times was the tip(s) disinfected?</label><input id="tip_disinfect_times"></div>
-            <div><label>Chemicals used for cleaning</label><input id="tip_cleaning_chemicals"></div>
-            <div><label>Chemicals used for disinfection</label><input id="tip_disinfection_chemicals"></div>
-            <div><label>Immersion time</label><input id="tip_immersion_time"></div>
-            <div><label>Other chemicals used</label><input id="tip_other_chemicals"></div>
-        </div>
-
-        <div class="subsection-title">Autoclave</div>
-        <div class="grid">
-            <div><label>Autoclave cycles</label><input id="tip_autoclave_cycles"></div>
-            <div><label>Autoclave model</label><input id="tip_autoclave_model"></div>
-            <div><label>Autoclave settings (time and temperature)</label><input id="tip_autoclave_settings"></div>
-            <div><label>Airtight pouch?</label><input id="tip_airtight_pouch"></div>
-            <div><label>Boiler water chemicals</label><input id="tip_boiler_chemicals"></div>
-        </div>
-
-    </div>
-
-    <!-- Export Section -->
-    <div class="section-title">Export & Actions</div>
-
-    <p>Choose an action below:</p>
-
-    <div class="buttons">
-        <button onclick="exportTXT()">Export as TXT</button>
-        <button onclick="copyToClipboard()">Copy to Clipboard</button>
-        <button class="secondary" onclick="resetForm()">Reset Form</button>
-    </div>
-
-</div>
-
-<div class="footer">
-    © 3Shape — Replacement Request Form
-	
-  <p>
-    <strong>Privacy Notice:</strong> The information entered in this form is not stored on any server or shared with external services. 
-    All data remains local to your device and is not transmitted.
-  </p>
-</div>
-
-<script>
-/* ------------------------------
-   SECTION TOGGLE
---------------------------------*/
-function toggleDamageFields() {
-    const type = document.getElementById("damageSelect").value;
-
-    const physical = document.getElementById("physicalSection");
-    const tips = document.getElementById("tipsSection");
-
-    physical.classList.add("hidden");
-    tips.classList.add("hidden");
-
-    if (type === "physical") physical.classList.remove("hidden");
-    if (type === "tips") tips.classList.remove("hidden");
-
-    saveForm();
-}
-
-/* ------------------------------
-   LIVE VALIDATION
---------------------------------*/
-document.getElementById("phone").addEventListener("input", validateContactFields);
-document.getElementById("email").addEventListener("input", validateContactFields);
-
-function validateContactFields() {
-    let valid = true;
-
-    const phone = document.getElementById("phone");
-    const email = document.getElementById("email");
-
-    const phoneError = document.getElementById("phoneError");
-    const emailError = document.getElementById("emailError");
-
-    const phonePattern = /^\+?[0-9\s\-()]{7,20}$/;
-    if (phone.value.trim() !== "" && !phonePattern.test(phone.value.trim())) {
-        phone.classList.add("error");
-        phoneError.style.display = "block";
-        valid = false;
-    } else {
-        phone.classList.remove("error");
-        phoneError.style.display = "none";
-    }
-
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (email.value.trim() !== "" && !emailPattern.test(email.value.trim())) {
-        email.classList.add("error");
-        emailError.style.display = "block";
-        valid = false;
-    } else {
-        email.classList.remove("error");
-        emailError.style.display = "none";
-    }
-
-    return valid;
-}
-
-function validateRequiredFields() {
-    let valid = true;
-
-    document.querySelectorAll("input[required]").forEach(el => {
-        const errorId = el.id + "ReqError";
-        let errorEl = document.getElementById(errorId);
-
-        if (!errorEl) {
-            errorEl = document.createElement("small");
-            errorEl.id = errorId;
-            errorEl.style.color = "#C8102E";
-            errorEl.style.display = "none";
-            errorEl.textContent = "This field is required.";
-            el.insertAdjacentElement("afterend", errorEl);
-        }
-
-        if (el.value.trim() === "") {
-            el.classList.add("error");
-            errorEl.style.display = "block";
-            valid = false;
-        } else {
-            el.classList.remove("error");
-            errorEl.style.display = "none";
-        }
-    });
-
-    return valid;
-}
-
-function validateDamageType() {
-    const damage = document.getElementById("damageSelect");
-    const damageError = document.getElementById("damageError");
-
-    if (damage.value === "") {
-        damage.classList.add("error");
-        damageError.style.display = "block";
-        return false;
-    } else {
-        damage.classList.remove("error");
-        damageError.style.display = "none";
-        return true;
-    }
-}
-
-/* ------------------------------
-   AUTOSAVE
---------------------------------*/
-document.querySelectorAll("input, textarea, select").forEach(el => {
-    el.addEventListener("input", saveForm);
-});
-
-function saveForm() {
-    const data = {};
-    document.querySelectorAll("input, textarea, select").forEach(el => {
-        data[el.id] = el.value;
-    });
-    localStorage.setItem("formData", JSON.stringify(data));
-}
-
-function loadForm() {
-    const saved = localStorage.getItem("formData");
-    if (!saved) return;
-    const data = JSON.parse(saved);
-    for (let id in data) {
-        const el = document.getElementById(id);
-        if (el) el.value = data[id];
-    }
-    toggleDamageFields();
-}
-
-loadForm();
-
-/* ------------------------------
-   EXPORT CONTENT
---------------------------------*/
-function buildContent() {
-    const damageType = document.getElementById("damageSelect").value;
-
-    const company   = document.getElementById("company").value;
-    const locationType = document.getElementById("locationType").value;
-    const locationNumber = document.getElementById("locationNumber").value;
-    const suite = (locationNumber.trim() !== "")
-        ? `\n Suite / Unit: ${locationType} ${locationNumber}`
-        : "";
-    const address   = document.getElementById("address").value;
-    const city      = document.getElementById("city").value;
-    const state     = document.getElementById("state").value;
-    const zip       = document.getElementById("zip").value;
-    const country   = document.getElementById("country").value;
-
-    const last_name   = document.getElementById("last_name").value;
-    const first_name   = document.getElementById("first_name").value;
-    const phone     = document.getElementById("phone").value;
-    const email     = document.getElementById("email").value;
-
-
-    let content =
-`Company Name: ${company}
-Address: ${address} ${suite}
-City: ${city}
-State: ${state}
-Zip Code: ${zip}
-Country: ${country}
-Responsible Contact: ${first_name} ${last_name}
-Phone Number: ${phone}
-Email: ${email}
-
-Dongle Replaced:
-Latest Deployment Date:
-Scanner replaced:
-Subscription Type:
-Direct Subscription?:
-
-Damage Type: ${damageType}
-`;
-
-    if (damageType === "physical") {
-        content += `
-
-Experience level: ${document.getElementById("experience").value}
-Incident report: ${document.getElementById("incident").value}
-Incident cause: ${document.getElementById("cause").value}
-Prevention: ${document.getElementById("prevention").value}
-`;
-    }
-
-    if (damageType === "tips") {
-        content += `
-
---- Disinfection ---
-Times disinfected: ${document.getElementById("tip_disinfect_times").value}
-Cleaning chemicals: ${document.getElementById("tip_cleaning_chemicals").value}
-Disinfection chemicals: ${document.getElementById("tip_disinfection_chemicals").value}
-Immersion time: ${document.getElementById("tip_immersion_time").value}
-Other chemicals: ${document.getElementById("tip_other_chemicals").value}
-
---- Autoclave ---
-Autoclave cycles: ${document.getElementById("tip_autoclave_cycles").value}
-Autoclave model: ${document.getElementById("tip_autoclave_model").value}
-Autoclave settings: ${document.getElementById("tip_autoclave_settings").value}
-Airtight pouch: ${document.getElementById("tip_airtight_pouch").value}
-Boiler water chemicals: ${document.getElementById("tip_boiler_chemicals").value}
-`;
-    }
-
-    return content;
-}
-
-/* ------------------------------
-   EXPORT & COPY
---------------------------------*/
-function exportTXT() {
-    if (!validateRequiredFields() || !validateDamageType() || !validateContactFields()) {
-        alert("Please correct the highlighted fields.");
-        return;
-    }
-		
-    const content = buildContent();
-
-    const blob = new Blob([content], { type: "text/plain" });
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "Replacement_form.txt";
-    link.click();
-}
-
-function copyToClipboard() {
-    if (!validateRequiredFields() || !validateDamageType() || !validateContactFields()) {
-        alert("Please correct the highlighted fields.");
-        return;
-    }
-
-    const content = buildContent();
-    navigator.clipboard.writeText(content)
-        .then(() => alert("Content copied to clipboard."))
-        .catch(() => alert("Unable to copy."));
-}
-
-/* ------------------------------
-   RESET
---------------------------------*/
-function resetForm() {
-    if (!confirm("Are you sure you want to clear all answers?")) return;
-
-    document.querySelectorAll("input, textarea").forEach(el => el.value = "");
-    document.getElementById("damageSelect").value = "";
-    document.getElementById("locationType").value = "";
-    toggleDamageFields();
-
-    localStorage.removeItem("formData");
-
-    alert("Form has been reset.");
-}
-</script>
-
-</body>
-</html>
+</main>

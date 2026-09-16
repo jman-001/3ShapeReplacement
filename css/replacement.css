@@ -1,0 +1,267 @@
+/* =========================================================
+   REPLACEMENT.CSS
+   Styles specific to the Replacement Form
+   ========================================================= */
+
+
+/* =========================================================
+   1. SECTION TITLES
+   ========================================================= */
+
+.section-title {
+    margin-top: 10px;
+    padding-bottom: 5px;
+
+    color: var(--brand-red-dark);
+
+    font-size: 20px;
+    font-weight: bold;
+
+    border-bottom: 2px solid var(--brand-red-dark);
+}
+
+
+/* =========================================================
+   2. SUBSECTION TITLES
+   ========================================================= */
+
+.subsection-title {
+    margin-top: 20px;
+    padding: 6px 10px;
+
+    background: var(--color-background-light);
+
+    color: #444444;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    border-radius: var(--radius-sm);
+}
+
+
+/* =========================================================
+   3. FORM LABELS
+   ========================================================= */
+
+label {
+    display: block;
+
+    color: var(--color-text);
+
+    /*font-weight: bold;*/
+}
+
+
+/* =========================================================
+   4. FORM CONTROLS
+   ========================================================= */
+
+input,
+textarea,
+select {
+    width: 100%;
+
+    margin-top: 6px;
+    padding: 8px;
+
+    border: 1px solid var(--color-border);
+    /*border-radius: var(--radius-sm);*/
+
+    background: var(--color-white);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   5. FORM CONTROL FOCUS
+   ========================================================= */
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+
+    /*border-color: var(--brand-red);*/
+
+    box-shadow:
+        0 0 8px
+        rgba(46, 44, 45, 0.35);
+}
+
+
+/* =========================================================
+   6. TEXTAREA
+   ========================================================= */
+
+textarea {
+    height: 90px;
+
+    resize: vertical;
+}
+
+
+/* =========================================================
+   7. SUBGRID CONTROLS
+   ========================================================= */
+
+.subgrid select,
+.subgrid input {
+    padding: 8px 10px;
+
+    border: 1px solid var(--color-border);
+    /*border-radius: var(--radius-md);*/
+
+    font-size: 0.95rem;
+}
+
+
+/* =========================================================
+   8. ACTION BUTTONS
+   ========================================================= */
+
+.buttons {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   9. PRIMARY BUTTON
+   ========================================================= */
+
+button {
+    padding: 5px 25px;
+
+    margin-bottom: 10px;
+
+    background: var(--brand-red);
+
+    color: var(--color-white);
+
+    border: none;
+    /*border-radius: var(--radius-sm);*/
+
+    font-size: 16px;
+    font-weight: bold;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.1s ease;
+}
+
+
+/* =========================================================
+   10. BUTTON STATES
+   ========================================================= */
+
+button:hover {
+    background: var(--brand-red-dark);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+
+/* =========================================================
+   11. SECONDARY BUTTON
+   ========================================================= */
+
+button.secondary {
+    background: var(--color-text-light);
+}
+
+button.secondary:hover {
+    background: #555555;
+}
+
+
+/* =========================================================
+   12. VALIDATION
+   ========================================================= */
+
+.error {
+    border-color: var(--brand-red);
+
+    background: var(--color-error-background);
+}
+
+
+/* Validation messages */
+
+small {
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   13. RESPONSIVE FORM
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   FORM GROUPS
+   ========================================================= */
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+
+/* Full-width grid item */
+
+.form-group-full {
+    grid-column: span 2;
+}
+
+
+/* =========================================================
+   CONDITIONAL SECTIONS
+   ========================================================= */
+
+.conditional-section {
+    margin-top: 20px;
+}
+
+.conditional-container {
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   VALIDATION MESSAGES
+   ========================================================= */
+
+.validation-message {
+    display: none;
+
+    margin-top: 4px;
+
+    color: var(--brand-red);
+}
+
+.replacement-page {
+    width: min(
+        calc(100% - 80px),
+        1080px
+    );
+
+    margin: 0 auto;
+
+    padding: 65px 0 0px;
+}
