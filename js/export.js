@@ -10,8 +10,11 @@
 
 function buildContent() {
 
-    const damageType =
-        document.getElementById("damageSelect").value;
+    const selectedDamage = document.querySelector(
+        'input[name="damageType"]:checked'
+    );
+
+    const damageType = selectedDamage.value;
 
 
     /* -----------------------------------------------------
@@ -75,7 +78,7 @@ function buildContent() {
        ----------------------------------------------------- */
 
     let content =
-`Company Name: ${company}
+        `Company Name: ${company}
 Address: ${address}${suite}
 City: ${city}
 State: ${state}
@@ -102,7 +105,7 @@ Damage Type: ${damageType}
     if (damageType === "physical") {
 
         content +=
-`
+            `
 
 Experience level: ${document.getElementById("experience").value}
 Incident report: ${document.getElementById("incident").value}
@@ -119,7 +122,7 @@ Prevention: ${document.getElementById("prevention").value}
     if (damageType === "tips") {
 
         content +=
-`
+            `
 
 --- Disinfection ---
 Times disinfected: ${document.getElementById("tip_disinfect_times").value}

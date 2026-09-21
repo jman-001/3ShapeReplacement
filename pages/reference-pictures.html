@@ -1,24 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Reference Pictures</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/reference-pictures.css">
 
-    <meta charset="UTF-8">
+        <!-- =====================================================
+         FAVICON
+         ===================================================== -->
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <link rel="icon" type="image/png" href="../assets/images/3shape_logo.png">
 
-    <title>Reference Pictures | 3Shape Internal Tools</title>
+
+    <!-- =====================================================
+         STYLESHEETS
+         ===================================================== -->
 
     <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/navigation.css">
+
     <link rel="stylesheet" href="../css/layout.css">
+
+    <link rel="stylesheet" href="../css/replacement.css">
+
     <link rel="stylesheet" href="../css/navigation.css">
+
+    <link rel="stylesheet" href="../css/installers.css">
+
+    <script src="../js/support-mode.js"></script>
+    <script src="../js/main.js"></script>
 
 </head>
 
+<body>
+
+        <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+    <header id="site-header">
+        <a href="../index.html" class="navigation-logo" aria-label="3Shape Internal Tools">
+
+            <img src="../assets/images/3shape_words.svg" height="30" alt="3Shape" margin-left="100">
+
+        </a>
+
+        <nav class="site-navigation">
+
+
+
+            <div class="navigation-menu">
+
+                <a href="replacement.html" class="navigation-item">
+                    Replacement Form
+                </a>
+
+                <a href="replacement.html" class="navigation-item">
+                    Resources
+                </a>
+
+
+                <a href="reference-pictures.html" class="navigation-item private-navigation active" data-private-navigation>
+                    Reference Pictures
+                </a>
+
+
+                <a href="installers.html" class="navigation-item private-navigation" data-private-navigation>
+                    Installers
+                </a>
+
+
+                <a href="tools-commands.html" class="navigation-item private-navigation" data-private-navigation>
+                    Tools &amp; Commands
+                </a>
+
+
+
+            </div>
+
+        </nav>
+
+        <div class="support-mode-indicator private-navigation" id="support-mode-indicator" data-private-navigation>
+            SUPPORT MODE
+        </div>
+
+    </header>
+    
+    <!-- =====================================================
+         FLOATING LOGO
+         ===================================================== -->
 
     <button
         type="button"
@@ -33,48 +105,29 @@
         
     </button>
 
-<body>
-
-    <header id="site-header">
-
-        <!-- Navigation -->
-
-    </header>
-
-
-    <main id="main-content">
-
-        <section class="page-header">
-
-            <h1>Reference Pictures</h1>
-
-            <p>
-                Support reference material.
-            </p>
-
-        </section>
-
-
-        <section class="page-content">
-
-            <!-- Reference pictures will go here -->
-
-        </section>
-
+    <main class="reference-page">
+        <header class="reference-header">
+            <div>
+                <p class="eyebrow">3SHAPE REPLACEMENT</p>
+                <h1>Reference Pictures</h1>
+                <p class="subtitle">Quick visual references for TRIOS scanners, accessories and connections.</p>
+            </div><label class="search"><span>Search</span><input id="searchInput" type="search"
+                    placeholder="Scanner, USB, cradle..." autocomplete="off"></label>
+        </header>
+        <nav class="filters" id="filters" aria-label="Scanner model filters"></nav>
+        <section class="gallery" id="gallery" aria-live="polite"></section>
+        <p class="empty" id="empty" hidden>No reference pictures match your search.</p>
     </main>
-
-
-    <footer id="site-footer">
-
-        <p>
-            3Shape Internal Tools
-        </p>
-
-    </footer>
-
-
-    <script src="../js/main.js"></script>
-
+    <dialog class="lightbox" id="lightbox"><button class="close" id="closeLightbox" aria-label="Close">×</button><button
+            class="arrow prev" id="prevPicture" aria-label="Previous picture">‹</button>
+        <figure><img id="lightboxImage" alt="">
+            <figcaption><span id="lightboxModel"></span>
+                <h2 id="lightboxTitle"></h2>
+                <p id="lightboxDescription"></p>
+            </figcaption>
+        </figure><button class="arrow next" id="nextPicture" aria-label="Next picture">›</button>
+    </dialog>
+    <script src="../js/reference-pictures.js"></script>
 </body>
 
 </html>
