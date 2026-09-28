@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "fileTypes": {
+    "pdf": {
+      "label": "PDF Document",
+      "mimeType": "application/pdf",
+      "category": "document",
+      "defaultAction": "open"
+    },
+    "docx": {
+      "label": "Word Document",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "category": "document",
+      "defaultAction": "download"
+    },
+    "xlsx": {
+      "label": "Excel Workbook",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "category": "spreadsheet",
+      "defaultAction": "download"
+    },
+    "csv": {
+      "label": "CSV File",
+      "mimeType": "text/csv",
+      "category": "spreadsheet",
+      "defaultAction": "download"
+    },
+    "txt": {
+      "label": "Text File",
+      "mimeType": "text/plain",
+      "category": "text",
+      "defaultAction": "open"
+    },
+    "log": {
+      "label": "Log File",
+      "mimeType": "text/plain",
+      "category": "diagnostic",
+      "defaultAction": "download"
+    },
+    "json": {
+      "label": "JSON File",
+      "mimeType": "application/json",
+      "category": "data",
+      "defaultAction": "open"
+    },
+    "xml": {
+      "label": "XML File",
+      "mimeType": "application/xml",
+      "category": "data",
+      "defaultAction": "open"
+    },
+    "zip": {
+      "label": "ZIP Archive",
+      "mimeType": "application/zip",
+      "category": "archive",
+      "defaultAction": "download"
+    },
+    "exe": {
+      "label": "Windows Application",
+      "mimeType": "application/octet-stream",
+      "category": "executable",
+      "defaultAction": "download",
+      "requiresWarning": true
+    },
+    "msi": {
+      "label": "Windows Installer",
+      "mimeType": "application/octet-stream",
+      "category": "installer",
+      "defaultAction": "download",
+      "requiresWarning": true
+    },
+    "ps1": {
+      "label": "PowerShell Script",
+      "mimeType": "text/plain",
+      "category": "script",
+      "defaultAction": "download",
+      "requiresWarning": true
+    },
+    "bat": {
+      "label": "Batch Script",
+      "mimeType": "text/plain",
+      "category": "script",
+      "defaultAction": "download",
+      "requiresWarning": true
+    },
+    "cmd": {
+      "label": "Command Script",
+      "mimeType": "text/plain",
+      "category": "script",
+      "defaultAction": "download",
+      "requiresWarning": true
+    },
+    "reg": {
+      "label": "Registry File",
+      "mimeType": "text/plain",
+      "category": "system",
+      "defaultAction": "download",
+      "requiresWarning": true
+    },
+    "png": {
+      "label": "PNG Image",
+      "mimeType": "image/png",
+      "category": "image",
+      "defaultAction": "open"
+    },
+    "jpg": {
+      "label": "JPEG Image",
+      "mimeType": "image/jpeg",
+      "category": "image",
+      "defaultAction": "open"
+    },
+    "jpeg": {
+      "label": "JPEG Image",
+      "mimeType": "image/jpeg",
+      "category": "image",
+      "defaultAction": "open"
+    },
+    "svg": {
+      "label": "SVG Image",
+      "mimeType": "image/svg+xml",
+      "category": "image",
+      "defaultAction": "open"
+    }
+  },
+  "specialTypes": {
+    "url": {
+      "label": "External Link",
+      "category": "link",
+      "defaultAction": "open"
+    },
+    "command": {
+      "label": "Command",
+      "category": "command",
+      "defaultAction": "copy"
+    }
+  }
+}

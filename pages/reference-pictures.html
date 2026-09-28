@@ -1,14 +1,11 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Reference Pictures</title>
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/reference-pictures.css">
-
-        <!-- =====================================================
+    <!-- =====================================================
          FAVICON
          ===================================================== -->
 
@@ -21,91 +18,23 @@
 
     <link rel="stylesheet" href="../css/global.css">
 
-    <link rel="stylesheet" href="../css/layout.css">
-
-    <link rel="stylesheet" href="../css/replacement.css">
-
     <link rel="stylesheet" href="../css/navigation.css">
 
-    <link rel="stylesheet" href="../css/installers.css">
+    <link rel="stylesheet" href="../css/layout.css">
 
-    <script src="../js/support-mode.js"></script>
-    <script src="../js/main.js"></script>
+    <link rel="stylesheet" href="../css/reference-pictures.css">
 
 </head>
 
 <body>
 
-        <!-- =====================================================
-         HEADER
-         ===================================================== -->
+    <site-header active="references"></site-header>
 
-    <header id="site-header">
-        <a href="../index.html" class="navigation-logo" aria-label="3Shape Internal Tools">
-
-            <img src="../assets/images/3shape_words.svg" height="30" alt="3Shape" margin-left="100">
-
-        </a>
-
-        <nav class="site-navigation">
-
-
-
-            <div class="navigation-menu">
-
-                <a href="replacement.html" class="navigation-item">
-                    Replacement Form
-                </a>
-
-                <a href="replacement.html" class="navigation-item">
-                    Resources
-                </a>
-
-
-                <a href="reference-pictures.html" class="navigation-item private-navigation active" data-private-navigation>
-                    Reference Pictures
-                </a>
-
-
-                <a href="installers.html" class="navigation-item private-navigation" data-private-navigation>
-                    Installers
-                </a>
-
-
-                <a href="tools-commands.html" class="navigation-item private-navigation" data-private-navigation>
-                    Tools &amp; Commands
-                </a>
-
-
-
-            </div>
-
-        </nav>
-
-        <div class="support-mode-indicator private-navigation" id="support-mode-indicator" data-private-navigation>
-            SUPPORT MODE
-        </div>
-
-    </header>
-    
-    <!-- =====================================================
-         FLOATING LOGO
-         ===================================================== -->
-
-    <button
-        type="button"
-        id="support-mode-trigger"
-        class="support-mode-button"
-        aria-label="Support Mode"
+    <main
+        class="reference-page"
+        data-source="../data/reference-pictures.json"
+        aria-busy="true"
     >
-        <img
-            src="../assets/images/3shape_logo.png"
-            alt=""
-    >
-        
-    </button>
-
-    <main class="reference-page">
         <header class="reference-header">
             <div>
                 <p class="eyebrow">3SHAPE REPLACEMENT</p>
@@ -127,6 +56,8 @@
             </figcaption>
         </figure><button class="arrow next" id="nextPicture" aria-label="Next picture">›</button>
     </dialog>
+    <script src="../js/header.js"></script>
+    <script src="../js/support-mode.js"></script>
     <script src="../js/reference-pictures.js"></script>
 </body>
 

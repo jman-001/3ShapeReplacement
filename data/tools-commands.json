@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "catalog": {
+    "id": "tools-commands",
+    "name": "Tools & Commands",
+    "access": "support"
+  },
+  "categories": [
+    {
+      "id": "diagnostics",
+      "name": "Diagnostics"
+    },
+    {
+      "id": "network",
+      "name": "Network"
+    },
+    {
+      "id": "logs",
+      "name": "Logs"
+    },
+    {
+      "id": "repair",
+      "name": "Repair"
+    },
+    {
+      "id": "commands",
+      "name": "Commands"
+    },
+    {
+      "id": "utilities",
+      "name": "Utilities"
+    }
+  ],
+  "items": [
+    {
+      "id": "health-commands",
+      "category": "commands",
+      "title": "Windows Health Commands",
+      "description": "Commands to analyze and restore possible corrupted files for windows",
+      "platforms": ["Command Prompt"],
+      "tags": [
+        "Windows",
+        "Corrupted Files"
+      ],
+      "content": {
+        "type": "command",
+        "value": "sfc /scannow \nDISM /Online /Cleanup-Image /RestoreHealth"
+      },
+      "actions": [
+        {
+          "type": "copy",
+          "label": "Copy command"
+        }
+      ]
+    },
+    {
+      "id": "show-ip-configuration",
+      "category": "commands",
+      "title": "Show IP Configuration",
+      "description": "Displays the complete Windows network configuration.",
+      "platforms": ["Command Prompt"],
+      "tags": [
+        "network",
+        "diagnostics"
+      ],
+      "content": {
+        "type": "command",
+        "value": "ipconfig /all"
+      },
+      "actions": [
+        {
+          "type": "copy",
+          "label": "Copy command"
+        }
+      ]
+    },
+    {
+      "id": "autoconfig",
+      "category": "commands",
+      "title": "Autoconfiguration setup",
+      "description": "Shows and configure the Autoconfig for disconnection cases. ",
+      "platforms": ["Power Shell"],
+      "tags": [
+        "network",
+        "disconnection"
+      ],
+      "content": {
+        "type": "command",
+        "value": "netsh wlan show interfaces \nnetsh wlan set autoconfig no \"Wi-Fi 3\"\nnetsh wlan show autoconfig"
+      },
+      "actions": [
+        {
+          "type": "copy",
+          "label": "Copy command"
+        }
+      ]
+    }
+
+  ]
+}

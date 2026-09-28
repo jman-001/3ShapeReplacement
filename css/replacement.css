@@ -331,3 +331,9 @@ small {
         grid-template-columns: 1fr;
     }
 }
+
+.damage-selector.error {
+    border-radius: var(--radius-md);
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+}

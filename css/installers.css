@@ -21,56 +21,6 @@
 
 
 /* =========================================================
-   INTRO
-   ========================================================= */
-
-.installers-intro {
-
-    margin-bottom: 55px;
-}
-
-
-.installers-eyebrow {
-
-    margin: 0 0 10px;
-
-    color: var(--brand-red);
-
-    font-size: 11px;
-    font-weight: 700;
-
-    letter-spacing: 0.14em;
-}
-
-
-.installers-intro h1 {
-
-    margin: 0 0 15px;
-
-    color: var(--color-text);
-
-    font-size: 46px;
-    font-weight: 400;
-
-    line-height: 1.1;
-}
-
-
-.installers-description {
-
-    max-width: 650px;
-
-    margin: 0;
-
-    color: var(--color-text-light);
-
-    font-size: 16px;
-
-    line-height: 1.6;
-}
-
-
-/* =========================================================
    MAIN INSTALLER CONTAINER
    ========================================================= */
 
@@ -349,4 +299,51 @@
 .installer-download:hover span {
 
     transform: translateX(3px);
+}
+
+.installer-downloads {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.installer-empty,
+.catalog-status {
+    margin: 0;
+    padding: 22px 20px;
+    color: var(--color-text-light);
+    font-size: 14px;
+}
+
+.catalog-status {
+    border: 1px solid var(--color-border);
+    background: var(--color-white);
+}
+
+.catalog-status-error {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.installer-module-empty {
+    color: var(--color-text-light);
+    font-size: 13px;
+}
+
+@media (max-width: 700px) {
+    .installer-version {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 18px 20px;
+    }
+
+    .installer-downloads {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .installer-download {
+        flex: 1 1 180px;
+    }
 }

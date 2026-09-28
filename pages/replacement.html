@@ -29,17 +29,11 @@
 
     <link rel="stylesheet" href="../css/global.css">
 
+    <link rel="stylesheet" href="../css/navigation.css">
+
     <link rel="stylesheet" href="../css/layout.css">
 
     <link rel="stylesheet" href="../css/replacement.css">
-
-    <link rel="stylesheet" href="../css/navigation.css">
-
-    <link rel="stylesheet" href="../css/installers.css">
-
-    <script src="../js/support-mode.js"></script>
-    <script src="../js/main.js"></script>
-
 
 </head>
 
@@ -47,71 +41,14 @@
 <body>
 
 
-    <!-- =====================================================
-         HEADER
-         ===================================================== -->
+    <site-header active="replacement"></site-header>
 
-    <header id="site-header">
-        <a href="../index.html" class="navigation-logo" aria-label="3Shape Internal Tools">
-
-            <img src="../assets/images/3shape_words.svg" height="30" alt="3Shape" margin-left="100">
-
-        </a>
-
-        <nav class="site-navigation">
-
-
-
-            <div class="navigation-menu">
-
-                <a href="replacement.html" class="navigation-item active">
-                    Replacement Form
-                </a>
-
-                <a href="replacement.html" class="navigation-item">
-                    Resources
-                </a>
-
-
-                <a href="reference-pictures.html" class="navigation-item private-navigation" data-private-navigation>
-                    Reference Pictures
-                </a>
-
-
-                <a href="installers.html" class="navigation-item private-navigation" data-private-navigation>
-                    Installers
-                </a>
-
-
-                <a href="tools-commands.html" class="navigation-item private-navigation" data-private-navigation>
-                    Tools &amp; Commands
-                </a>
-
-
-
-            </div>
-
-        </nav>
-
-        <div class="support-mode-indicator private-navigation" id="support-mode-indicator" data-private-navigation>
-            SUPPORT MODE
-        </div>
-
-    </header>
-
-    <!-- =====================================================
-         FLOATING LOGO
-         ===================================================== -->
-
-    <button type="button" id="support-mode-trigger" class="support-mode-button" aria-label="Support Mode">
-        <img src="../assets/images/3shape_logo.png" alt="">
-
-    </button>
+    <div id="replacement-form">
 
     <main class="replacement-page">
-        <section class="installers-intro">
+        <section class="page-intro">
 
-            <p class="installers-eyebrow">
+            <p class="page-eyebrow">
                 INTERNAL SUPPORT RESOURCE
             </p>
 
@@ -119,7 +56,7 @@
                 Replacement form
             </h1>
 
-            <p class="installers-description">
+            <p class="page-description">
                 A tool to use when 3Shape support has identified a replacement is necessary.
             </p>
 
@@ -138,11 +75,16 @@
 
         <div class="form-group">
 
-            <label for="damageSelect" class="section-title">
+            <div id="damage-type-label" class="section-title">
                 Type of Damage:
-            </label>
+            </div>
 
-            <div class="damage-selector">
+            <div
+                class="damage-selector"
+                role="radiogroup"
+                aria-labelledby="damage-type-label"
+                aria-describedby="damageError"
+            >
 
                 <label class="damage-option">
                     <input type="radio" name="damageType" value="internal">
@@ -662,7 +604,7 @@
         </section>
     </main>
 
-
+    </div>
 
     <!-- =====================================================
          FOOTER
@@ -680,7 +622,8 @@
                 Privacy Notice:
             </strong>
 
-            The information entered in this form is not
+            The information entered in this form is saved
+            locally in this browser and is not
             stored on any server or shared with external
             services.
 
@@ -696,10 +639,12 @@
          JAVASCRIPT
          ===================================================== -->
 
+    <script src="../js/header.js"></script>
+    <script src="../js/support-mode.js"></script>
     <script src="../js/validation.js"></script>
     <script src="../js/storage.js"></script>
     <script src="../js/export.js"></script>
-    <script src="../js/main.js"></script>
+    <script src="../js/replacement.js"></script>
 
 
 </body>

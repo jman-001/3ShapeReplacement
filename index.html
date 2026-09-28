@@ -1,213 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <script src="js/support-mode.js"></script>
-    <script src="js/main.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Internal tools and resources for 3Shape support workflows.">
+    <title>3Shape Internal Tools</title>
+    <link rel="icon" type="image/png" href="assets/images/3shape_logo.png">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/layout.css">
 </head>
 
-<header id="site-header">
-        <a
-            href="index.html"
-            class="navigation-logo"
-            aria-label="3Shape Internal Tools"
-    
-            
-        >
+<body>
+    <site-header active="home"></site-header>
 
-            <img
-                src="assets/images/3shape_words.svg"
-                height="30"
-                alt="3Shape"
-                margin-left="100"
-            >
-
-        </a>
-
-        <nav class="site-navigation">
-
-
-
-            <div class="navigation-menu">
-
-                <a
-                    href="pages/replacement.html"
-                    class="navigation-item"
-                >
-                    Replacement Form
-                </a>
-
-                <a
-                    href="pages/replacement.html"
-                    class="navigation-item"
-                >
-                    Resources
-                </a>
-
-
-                <a
-                    href="pages/reference-pictures.html"
-                    class="navigation-item private-navigation"
-                    data-private-navigation
-                >
-                    Reference Pictures
-                </a>
-
-
-                <a
-                    href="pages/installers.html"
-                    class="navigation-item private-navigation"
-                    data-private-navigation
-                >
-                    Installers
-                </a>
-
-
-                <a
-                    href="pages/tools-commands.html"
-                    class="navigation-item private-navigation"
-                    data-private-navigation
-                >
-                    Tools &amp; Commands
-                </a>
-
-
-
-    </div>
-
-        </nav>
-
-        <div
-            class="support-mode-indicator private-navigation"
-            id="support-mode-indicator"
-            data-private-navigation
-        >
-            SUPPORT MODE
-        </div>
-
-</header>
-
-<button
-    type="button"
-    id="support-mode-trigger"
-    class="support-mode-button"
-    aria-label="Support Mode"
->
-    <img
-        src="assets/images/3shape_logo.png"
-        alt=""
-    >
-</button>
-
-<link rel="stylesheet" href="css/navigation.css">
-<link rel="stylesheet" href="css/global.css">
-<link rel="stylesheet" href="css/layout.css">
-
-<main id="main-content">
-
-    <section class="home-hero">
-
-        <div class="home-hero-content">
-
-            <p class="home-eyebrow">
-                INTERNAL SUPPORT TOOLS
-            </p>
-
-            <h1>
-                Tools to help you
-                solve support cases faster.
-            </h1>
-
-            <p class="home-description">
-                A collection of utilities, references and resources
-                designed to simplify everyday support workflows.
-            </p>
-
-        </div>
-
-
-        <div class="home-actions">
-
-            <p class="home-actions-title">
-                I WANT TO...
-            </p>
-
-
-            <a
-                href="pages/replacement.html"
-                class="home-action"
-            >
-
-                <span>
-                    Submit a replacement
-                </span>
-
-                <span class="home-action-arrow">
-                    →
-                </span>
-
-            </a>
-
-            <div
-                class="home-action"
-            >
-
-                <span>
-                    View public resources
-                </span>
-
-                <span class="home-action-arrow">
-                    →
-                </span>
-
+    <main id="main-content">
+        <section class="home-hero">
+            <div class="home-hero-content">
+                <p class="home-eyebrow">INTERNAL SUPPORT TOOLS</p>
+                <h1>Tools to help you solve support cases faster.</h1>
+                <p class="home-description">
+                    A collection of utilities, references and resources
+                    designed to simplify everyday support workflows.
+                </p>
             </div>
 
-            <div
-                class="home-action home-action-private"
-                data-private="true"
-            >
+            <div class="home-actions">
+                <p class="home-actions-title">I WANT TO...</p>
 
-                <span>
-                    View support resources
-                </span>
+                <a href="pages/replacement.html" class="home-action">
+                    <span>Submit a replacement</span>
+                    <span class="home-action-arrow">→</span>
+                </a>
 
-                <span class="home-action-lock">
-                    🔒
-                </span>
+                <a href="pages/resources.html" class="home-action">
+                    <span>View public resources</span>
+                    <span class="home-action-arrow">→</span>
+                </a>
 
+                <div class="home-action home-action-private" data-private="true">
+                    <span>View support resources</span>
+                    <span class="home-action-lock">🔒</span>
+                </div>
+
+                <div class="home-action home-action-private" data-private="true">
+                    <span>Access installers</span>
+                    <span class="home-action-lock">🔒</span>
+                </div>
+
+                <div class="home-action home-action-private" data-private="true">
+                    <span>Open tools &amp; commands</span>
+                    <span class="home-action-lock">🔒</span>
+                </div>
             </div>
+        </section>
+    </main>
 
+    <script src="js/header.js"></script>
+    <script src="js/support-mode.js"></script>
+</body>
 
-            <div
-                class="home-action home-action-private"
-                data-private="true"
-            >
-
-                <span>
-                    Access installers
-                </span>
-
-                <span class="home-action-lock">
-                    🔒
-                </span>
-
-            </div>
-
-
-            <div
-                class="home-action home-action-private"
-                data-private="true"
-            >
-
-                <span>
-                    Open tools &amp; commands
-                </span>
-
-                <span class="home-action-lock">
-                    🔒
-                </span>
-
-            </div>
-
-        </div>
-
-    </section>
-
-</main>
+</html>

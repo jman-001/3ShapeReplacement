@@ -11,6 +11,10 @@
    HEADER
    ========================================================= */
 
+site-header {
+    display: block;
+}
+
 #site-header {
     position: relative;
 

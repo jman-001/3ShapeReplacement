@@ -79,6 +79,13 @@ const SupportMode = {
             "Support Mode enabled."
         );
 
+        window.dispatchEvent(
+            new CustomEvent(
+                "supportmodechange",
+                { detail: { enabled: true } }
+            )
+        );
+
     },
 
 
@@ -128,6 +135,13 @@ const SupportMode = {
 
         console.log(
             "Support Mode disabled."
+        );
+
+        window.dispatchEvent(
+            new CustomEvent(
+                "supportmodechange",
+                { detail: { enabled: false } }
+            )
         );
 
     },

@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "models": [
+    {
+      "id": "trios-6",
+      "name": "TRIOS 6",
+      "pictures": [
+        {
+          "title": "Scanner - Front",
+          "image": "../assets/images/reference/trios6/scanner-front.jpg",
+          "description": "Front view of the TRIOS 6 scanner."
+        },
+        {
+          "title": "Scanner - Back",
+          "image": "../assets/images/reference/trios6/scanner-back.jpg",
+          "description": "Rear view of the TRIOS 6 scanner."
+        },
+        {
+          "title": "Scanner - Bottom",
+          "image": "../assets/images/reference/trios6/scanner-bottom.jpg",
+          "description": "Bottom view and connection reference."
+        }
+      ]
+    },
+    {
+      "id": "trios-5",
+      "name": "TRIOS 5",
+      "pictures": [
+        {
+          "title": "Scanner - Front",
+          "image": "../assets/images/reference/trios5/Front.jpg",
+          "description": "Front view of the TRIOS 5 scanner."
+        }
+      ]
+    },
+    {
+      "id": "trios-4",
+      "name": "TRIOS 4",
+      "pictures": [
+        {
+          "title": "Scanner - Front",
+          "image": "../assets/images/reference/trios4/Front.jpg",
+          "description": "Front view of the TRIOS 4 scanner."
+        },
+        {
+          "title": "Scanner - Tips bottom",
+          "image": "../assets/images/reference/trios4/Tips.jpg",
+          "description": "View of the serial number and golden connectors."
+        },
+        {
+          "title": "Scanner - Back",
+          "image": "../assets/images/reference/trios4/Back.jpg",
+          "description": "Back view of the TRIOS 4 scanner."
+        },
+        {
+          "title": "Scanner - Side",
+          "image": "../assets/images/reference/trios4/Side with TIP.jpg",
+          "description": "Side view of the TRIOS 4 scanner."
+        }
+      ]
+    },
+    {
+      "id": "trios-3",
+      "name": "TRIOS 3",
+      "pictures": [
+        {
+          "title": "Scanner - Front",
+          "image": "../assets/images/reference/trios3/scanner-front.jpg",
+          "description": "Front view of the TRIOS 3 scanner."
+        }
+      ]
+    },
+    {
+      "id": "trios-core",
+      "name": "TRIOS Core",
+      "pictures": [
+        {
+          "title": "Scanner - Front",
+          "image": "../assets/images/reference/trios-core/scanner-front.jpg",
+          "description": "Front view of the TRIOS Core scanner."
+        }
+      ]
+    }
+  ]
+}

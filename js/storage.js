@@ -8,7 +8,7 @@
    STORAGE KEY
    ========================================================= */
 
-const FORM_STORAGE_KEY = "formData";
+const FORM_STORAGE_KEY = "replacement-form:v1";
 
 
 /* =========================================================
@@ -16,15 +16,35 @@ const FORM_STORAGE_KEY = "formData";
    ========================================================= */
 
 function saveForm() {
-
     const data = {};
+    const formRoot = document.getElementById("replacement-form");
 
-    document
+    if (!formRoot) {
+        return;
+    }
+
+    formRoot
         .querySelectorAll("input, textarea, select")
         .forEach(element => {
+            const key = element.id || element.name;
 
-            data[element.id] = element.value;
+            if (!key) {
+                return;
+            }
 
+            if (element.type === "radio") {
+                if (element.checked) {
+                    data[key] = element.value;
+                }
+                return;
+            }
+
+            if (element.type === "checkbox") {
+                data[key] = element.checked;
+                return;
+            }
+
+            data[key] = element.value;
         });
 
 
@@ -40,12 +60,11 @@ function saveForm() {
    ========================================================= */
 
 function loadForm() {
-
     const saved =
         localStorage.getItem(FORM_STORAGE_KEY);
+    const formRoot = document.getElementById("replacement-form");
 
-
-    if (!saved) {
+    if (!saved || !formRoot) {
         return;
     }
 
@@ -56,18 +75,21 @@ function loadForm() {
             JSON.parse(saved);
 
 
-        Object.entries(data).forEach(
-            ([id, value]) => {
+        formRoot.querySelectorAll("input, textarea, select").forEach((element) => {
+            const key = element.id || element.name;
 
-                const element =
-                    document.getElementById(id);
-
-                if (element) {
-                    element.value = value;
-                }
-
+            if (!key || !(key in data)) {
+                return;
             }
-        );
+
+            if (element.type === "radio") {
+                element.checked = element.value === data[key];
+            } else if (element.type === "checkbox") {
+                element.checked = Boolean(data[key]);
+            } else {
+                element.value = data[key];
+            }
+        });
 
 
     } catch (error) {

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "catalog": {
+    "id": "resources",
+    "name": "Resources",
+    "access": "public"
+  },
+  "categories": [
+    { "id": "documentation", "name": "Documentation" },
+    { "id": "guides", "name": "Guides" },
+    { "id": "forms-templates", "name": "Forms & Templates" },
+    { "id": "drivers", "name": "Drivers" },
+    { "id": "training", "name": "Training" },
+    { "id": "external", "name": "External Resources" }
+  ],
+  "items": []
+}

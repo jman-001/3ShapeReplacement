@@ -14,7 +14,7 @@ function buildContent() {
         'input[name="damageType"]:checked'
     );
 
-    const damageType = selectedDamage.value;
+    const damageType = selectedDamage?.value || "";
 
 
     /* -----------------------------------------------------

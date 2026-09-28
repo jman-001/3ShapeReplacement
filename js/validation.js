@@ -148,29 +148,21 @@ function validateRequiredFields() {
    ========================================================= */
 
 function validateDamageType() {
-
-    const damageSelect =
-        document.getElementById("damageSelect");
-
+    const selectedDamage = document.querySelector(
+        '#replacement-form input[name="damageType"]:checked'
+    );
+    const damageSelector = document.querySelector(".damage-selector");
     const damageError =
         document.getElementById("damageError");
 
-
-    if (damageSelect.value === "") {
-
-        damageSelect.classList.add("error");
-
+    if (!selectedDamage) {
+        damageSelector.classList.add("error");
         damageError.style.display = "block";
-
         return false;
-
     }
 
-
-    damageSelect.classList.remove("error");
-
+    damageSelector.classList.remove("error");
     damageError.style.display = "none";
-
     return true;
 }
 

@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "products": [
+    {
+      "id": "3shape-unite",
+      "name": "3Shape Unite",
+      "description": "Available software versions organized by Unite generation.",
+      "modules": [
+        {
+          "id": "unite",
+          "name": "3Shape Unite"
+        },
+        {
+          "id": "trios",
+          "name": "TRIOS"
+        }
+      ],
+      "generations": [
+        {
+          "id": "unite-iv",
+          "name": "Unite IV",
+          "expanded": true,
+          "releases": []
+        },
+        {
+          "id": "unite-iii",
+          "name": "Unite III",
+          "expanded": true,
+          "releases": [
+            {
+              "version": "1.8.18.2",
+              "downloads": [
+                { "module": "unite", "url": "https://cdn.3shapeconfig.com/config-production/78f7b1cf-a824-450b-973c-9c7b49a72ce1" }
+              ]
+            },
+            {
+              "version": "1.8.18.1",
+              "downloads": [
+                { "module": "unite", "url": "https://cdn.3shapeconfig.com/config-production/1d2651e8-0a82-43a6-921e-aa77d6320cfd" }
+              ]
+            },
+            {
+              "version": "1.8.16.3",
+              "downloads": [
+                { "module": "unite", "url": "https://cdn.3shapeconfig.com/config-production/9e533aeb-dc78-4f84-8c48-08c66565afd8" }
+              ]
+            },
+            {
+              "version": "1.8.16.2",
+              "downloads": [
+                { "module": "unite", "url": "https://cdn.3shapeconfig.com/config-production/546367dd-cfcb-4baf-8eab-8506ee67f67b" }
+              ]
+            },
+            {
+              "version": "1.8.16.1",
+              "downloads": [
+                { "module": "unite", "url": "https://cdn.3shapeconfig.com/config-production/645e2bb3-6449-4960-8c0e-a0c98129d959" }
+              ]
+            },
+            {
+              "version": "1.8.15.0",
+              "downloads": [
+                { "module": "unite", "url": "https://cdn.3shapeconfig.com/config-production/de2f0ac3-5eca-4b29-88a9-9239849ef8cb" }
+              ]
+            },
+            {
+              "version": "1.8.14.3",
+              "downloads": [
+                { "module": "unite", "url": "https://cdn.3shapeconfig.com/config-production/34721bfe-9641-4085-9ebb-a5adbe61ce67" }
+              ]
+            },
+            {
+              "version": "1.8.14.2",
+              "downloads": [
+                { "module": "unite", "url": "https://cdn.3shapeconfig.com/config-production/2094db9b-e6e5-42df-bd6d-2ea2e918e1e3" }
+              ]
+            },
+            {
+              "version": "1.8.14.1",
+              "downloads": [
+                { "module": "unite", "url": "https://cdn.3shapeconfig.com/config-production/425045cd-bc7e-4ed5-81cb-823f0d2a2ab8" }
+              ]
+            },
+            {
+              "version": "1.8.13.3",
+              "downloads": [
+                { "module": "unite", "url": "https://cdn.3shapeconfig.com/config-production/533b5bb7-fd31-4a59-b845-2f0ac386ae33" }
+              ]
+            },
+            {
+              "version": "1.8.13.2",
+              "downloads": [
+                { "module": "unite", "url": "https://cdn.3shapeconfig.com/config-production/7a3cf317-de66-4bd8-8468-8fd070c12783" }
+              ]
+            },
+            {
+              "version": "1.8.11.2",
+              "downloads": [
+                { "module": "unite", "url": "https://cdn.3shapeconfig.com/config-production/d4100ab3-c5bf-44bd-9499-7246858f9888" }
+              ]
+            },
+            {
+              "version": "1.8.11.1",
+              "downloads": [
+                { "module": "unite", "url": "https://cdn.3shapeconfig.com/config-production/71cf9880-0eaf-4622-9bb7-0ef72be84371" }
+              ]
+            },
+            {
+              "version": "1.8.10.1",
+              "downloads": [
+                { "module": "unite", "url": "https://cdn.3shapeconfig.com/config-production/d2fbd1d9-cd34-4e65-82c2-7bad0694a30a" }
+              ]
+            },
+            {
+              "version": "1.8.8.1",
+              "downloads": [
+                { "module": "unite", "url": "https://cdn.3shapeconfig.com/config-production/0c576406-e61a-4093-9d70-29c8bdad1262" }
+              ]
+            },
+            {
+              "version": "1.8.8.0",
+              "downloads": [
+                { "module": "unite", "url": "https://cdn.3shapeconfig.com/config-production/d48ceb3a-e606-4483-b92d-a3a5edc849cf" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "unite-ii",
+          "name": "Unite II",
+          "expanded": false,
+          "releases": [
+            {
+              "version": "1.7.82.5",
+              "downloads": [
+                { "module": "unite", "url": "https://cdn.3shapeconfig.com/config-production/6940f044-55c9-43ef-a20a-f81aa82f977e" }
+              ]
+            },
+            {
+              "version": "1.7.83.0",
+              "downloads": [
+                { "module": "unite", "url": "https://cdn.3shapeconfig.com/config-production/08b13cbd-33b5-4658-81be-04367f1d2399" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "unite-i",
+          "name": "Unite I",
+          "expanded": false,
+          "releases": [
+            {
+              "version": "1.7.40.2",
+              "downloads": [
+                { "module": "unite", "url": "https://cdn.3shapeconfig.com/config-production/e07717a5-6cc6-44b1-8827-516fbf4df9cb" }
+              ]
+            },
+            {
+              "version": "1.7.40.1",
+              "downloads": [
+                { "module": "unite", "url": "https://cdn.3shapeconfig.com/config-production/6d230e1d-a4f3-45aa-ae3a-586c5c3d0a11" }
+              ]
+            },
+            {
+              "version": "1.7.33.2",
+              "downloads": [
+                {
+                  "module": "trios",
+                  "moduleVersion": "1.18.5.51",
+                  "url": "https://cdn.3shapeconfig.com/config-production/fa11427d-d35a-4dc0-9b9c-7d6486d2cc11"
+                },
+                {
+                  "module": "unite",
+                  "url": "https://cdn.3shapeconfig.com/config-production/fa11427d-d35a-4dc0-9b9c-7d6486d2cc11"
+                }
+              ]
+            },
+            {
+              "version": "1.7.33.1",
+              "downloads": [
+                { "module": "unite", "url": "https://cdn.3shapeconfig.com/config-production/42ae5aec-15a3-401b-b607-0f7b6fe99b75" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
