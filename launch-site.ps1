@@ -1,10 +1,10 @@
 param(
     [ValidateRange(1, 65535)]
-    [int]$Port = 4848
+    [int]$Port = 4242
 )
 
 $projectRoot = $PSScriptRoot
-$siteUrl = "http://localhost:$Port"
+$siteUrl = "http://0.0.0.0:$Port"
 $healthUrl = "$siteUrl/__health"
 
 function Test-SiteServer {
